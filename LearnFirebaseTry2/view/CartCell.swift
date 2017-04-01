@@ -20,7 +20,6 @@ class CartCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = UITableViewCellSelectionStyle.none
-        // Initialization code
     }
 
     @IBAction func stepperValueChanged(_ sender: UIStepper) {

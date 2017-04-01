@@ -19,10 +19,10 @@ class ViewController:
 
     @IBOutlet weak var menuCollectionView: UICollectionView!
     @IBOutlet weak var orderSum: UILabel!
+    private var lastOpenedCellIndex = -1
     private var productsList = [Product]()
     private var ref: FIRDatabaseReference?
     private let realm = try! Realm()
-    private var lastOpenedIndex = -1
     // TODO: save to userDefaults
 
     override func viewDidLoad() {
@@ -67,7 +67,6 @@ class ViewController:
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCell", for: indexPath) as? MenuCell {
             let product = productsList[indexPath.item]
             cell.configureCell(product: product)
-            cell.productName.tag = indexPath.item
             return cell
         } else {
             return UICollectionViewCell()
@@ -75,8 +74,8 @@ class ViewController:
     }
 
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        lastOpenedIndex = indexPath.item
         let product = productsList[indexPath.item]
+        lastOpenedCellIndex = indexPath.item
         performSegue(withIdentifier: "ProductDetail", sender: product)
     }
 
@@ -89,18 +88,14 @@ class ViewController:
         let inCart = realm.objects(Product.self)
         performSegue(withIdentifier: "CartVC", sender: inCart)
     }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "ProductDetail") {
             if let detailsVC = segue.destination as? ProductDetailVC {
                 if let product = sender as? Product {
                     detailsVC.delegate = self
+                    detailsVC.cellIndex = lastOpenedCellIndex
                     detailsVC.product = product
-                }
-            }
-        } else if(segue.identifier == "CartVC"){
-            if let cartVC = segue.destination as? CartVC{
-                if let product = sender as? [Product]{
-//                    cartVC.productsList
                 }
             }
         }
