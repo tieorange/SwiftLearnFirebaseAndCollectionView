@@ -15,8 +15,9 @@
 		6355CF3F1EB1398A00A2D122 /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6355CF3E1EB1398A00A2D122 /* ProductDetailVC.swift */; };
 		6387B93B1EB7A43A000602D2 /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387B93A1EB7A43A000602D2 /* CartVC.swift */; };
 		6387B93D1EB7A5F3000602D2 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387B93C1EB7A5F3000602D2 /* CartCell.swift */; };
+		6387B93F1EB7A5F3000602D2 /* OrderTrackingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387B93E1EB7A5F3000602D2 /* OrderTrackingVC.swift */; };
 		63FF8FA61EB75D0400B60A91 /* CheckoutButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63FF8FA51EB75D0400B60A91 /* CheckoutButtonView.xib */; };
-		63FF8FA81EB75D3000B60A91 /* CheckoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FF8FA71EB75D3000B60A91 /* CheckoutButton.swift */; };
+		63FF8FA81EB75D3000B60A91 /* CheckoutButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FF8FA71EB75D3000B60A91 /* CheckoutButtonView.swift */; };
 		6D1132664CD8768F13680976 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D11376F60BE32DFAB3B6314 /* extensions.swift */; };
 		6D11348F09176C6B45BEDEF4 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1132395A14357FDB9D0CE2 /* Product.swift */; };
 		6D11355C503B9A38CB1677FB /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D113119ADFF63579ECA7097 /* MenuCell.swift */; };
@@ -39,8 +40,9 @@
 		6355CF3E1EB1398A00A2D122 /* ProductDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductDetailVC.swift; path = view/ProductDetailVC.swift; sourceTree = "<group>"; };
 		6387B93A1EB7A43A000602D2 /* CartVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
 		6387B93C1EB7A5F3000602D2 /* CartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
+		6387B93E1EB7A5F3000602D2 /* OrderTrackingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderTrackingVC.swift; sourceTree = "<group>"; };
 		63FF8FA51EB75D0400B60A91 /* CheckoutButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckoutButtonView.xib; sourceTree = "<group>"; };
-		63FF8FA71EB75D3000B60A91 /* CheckoutButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutButton.swift; sourceTree = "<group>"; };
+		63FF8FA71EB75D3000B60A91 /* CheckoutButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutButtonView.swift; sourceTree = "<group>"; };
 		6D113119ADFF63579ECA7097 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		6D1132395A14357FDB9D0CE2 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		6D1134CB8C6F13242BD8B6EC /* ProductsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsModel.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				631F5C241EAE9D78008AB7A5 /* ViewController.swift */,
 				6355CF3E1EB1398A00A2D122 /* ProductDetailVC.swift */,
 				6387B93A1EB7A43A000602D2 /* CartVC.swift */,
+				6387B93E1EB7A5F3000602D2 /* OrderTrackingVC.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -127,7 +130,7 @@
 		63FF8FAA1EB75D4100B60A91 /* CheckoutButton */ = {
 			isa = PBXGroup;
 			children = (
-				63FF8FA71EB75D3000B60A91 /* CheckoutButton.swift */,
+				63FF8FA71EB75D3000B60A91 /* CheckoutButtonView.swift */,
 				63FF8FA51EB75D0400B60A91 /* CheckoutButtonView.xib */,
 			);
 			name = CheckoutButton;
@@ -196,7 +199,7 @@
 				TargetAttributes = {
 					631F5C1E1EAE9D78008AB7A5 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = PFFU3MHQ7Q;
+						DevelopmentTeam = G4T5ATNHCG;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -287,7 +290,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63FF8FA81EB75D3000B60A91 /* CheckoutButton.swift in Sources */,
+				6387B93F1EB7A5F3000602D2 /* OrderTrackingVC.swift in Sources */,
+				63FF8FA81EB75D3000B60A91 /* CheckoutButtonView.swift in Sources */,
 				631F5C251EAE9D78008AB7A5 /* ViewController.swift in Sources */,
 				631F5C231EAE9D78008AB7A5 /* AppDelegate.swift in Sources */,
 				6387B93B1EB7A43A000602D2 /* CartVC.swift in Sources */,
@@ -423,7 +427,7 @@
 			baseConfigurationReference = 10633643D7D289974C5693E4 /* Pods-LearnFirebaseTry2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = PFFU3MHQ7Q;
+				DEVELOPMENT_TEAM = G4T5ATNHCG;
 				INFOPLIST_FILE = LearnFirebaseTry2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -439,7 +443,7 @@
 			baseConfigurationReference = 76EEF42B384468E17B1F7508 /* Pods-LearnFirebaseTry2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = PFFU3MHQ7Q;
+				DEVELOPMENT_TEAM = G4T5ATNHCG;
 				INFOPLIST_FILE = LearnFirebaseTry2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

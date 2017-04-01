@@ -15,8 +15,8 @@ class CartVC:
         UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var checkoutButton: CheckoutButton!
-    
+    @IBOutlet weak var checkoutButton: CheckoutButtonView!
+
     var productsList: Results<Product>!
     var realm = try! Realm()
 
@@ -40,6 +40,19 @@ class CartVC:
             return cell
         } else {
             return UITableViewCell()
+        }
+    }
+
+    @IBAction func onClickCheckout(_ sender: UITapGestureRecognizer) {
+        print("clicked")
+        performSegue(withIdentifier: "OrderTrackingVC", sender: nil)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "OrderTrackingVC") {
+            if let orderTrackingVC = segue.destination as? OrderTrackingVC {
+                // TODO
+            }
         }
     }
 

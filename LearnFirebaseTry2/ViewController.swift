@@ -17,13 +17,12 @@ class ViewController:
         UICollectionViewDelegateFlowLayout,
         writeValueBackDelegate {
 
+    @IBOutlet weak var checkoutButton: CheckoutButtonView!
     @IBOutlet weak var menuCollectionView: UICollectionView!
-    @IBOutlet weak var orderSum: UILabel!
     private var lastOpenedCellIndex = -1
     private var productsList = [Product]()
     private var ref: FIRDatabaseReference?
     private let realm = try! Realm()
-    // TODO: save to userDefaults
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +31,7 @@ class ViewController:
 
         menuCollectionView.dataSource = self
         menuCollectionView.delegate = self
-        orderSum.isHidden = true
+//        checkoutButton.isHidden = true
     }
 
     private func initFirebase() {
@@ -119,21 +118,24 @@ class ViewController:
     }
 
     func refreshOrderSum() {
-        var sum = 0.0
+        /*var sumMoney = 0.0
+        var sumAmount = 0
         var isAnyProductAdded = false
         productsList.forEach {
             if ($0.amount > 0) {
-                sum += $0.moneyWithCents * Double($0.amount)
+                sumAmount += $0.amount
+                sumMoney += $0.moneyWithCents * Double($0.amount)
                 isAnyProductAdded = true
             }
-        }
+        }*/
+        checkoutButton.refreshData(realm.objects(Product.self))
 
-        if (isAnyProductAdded) {
-            orderSum.text = "\(sum)0"
+        /*if (isAnyProductAdded) {
+            checkoutButton.setPrice(price: <#T##Int##Swift.Int#>) = "\(sumMoney)0"
             orderSum.isHidden = false
         } else {
             orderSum.isHidden = true
-        }
+        }*/
     }
 
 }
