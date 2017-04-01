@@ -36,6 +36,7 @@ class CartVC:
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CartCell", for: indexPath) as? CartCell {
             let product = productsList[indexPath.row]
             cell.configureCell(product: product)
+            cell.nameLabel.tag = indexPath.row
             return cell
         } else {
             return UITableViewCell()

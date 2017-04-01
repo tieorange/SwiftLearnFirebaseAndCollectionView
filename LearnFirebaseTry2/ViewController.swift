@@ -67,6 +67,7 @@ class ViewController:
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCell", for: indexPath) as? MenuCell {
             let product = productsList[indexPath.item]
             cell.configureCell(product: product)
+            cell.productName.tag = indexPath.item
             return cell
         } else {
             return UICollectionViewCell()
@@ -74,8 +75,8 @@ class ViewController:
     }
 
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        lastOpenedIndex = indexPath.row
-        let product = productsList[indexPath.row]
+        lastOpenedIndex = indexPath.item
+        let product = productsList[indexPath.item]
         performSegue(withIdentifier: "ProductDetail", sender: product)
     }
 
@@ -105,9 +106,9 @@ class ViewController:
         }
     }
 
-    func writeValueBack(amount: Int) {
-        if (lastOpenedIndex >= 0) {
-            let selectedProduct = productsList[lastOpenedIndex]
+    func writeValueBack(amount: Int, productIndex: Int) {
+        if (productIndex >= 0) {
+            let selectedProduct = productsList[productIndex]
 
             try! realm.write {
                 selectedProduct.amount = amount

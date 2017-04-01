@@ -25,7 +25,7 @@ class MenuCell: UICollectionViewCell {
 
     func configureCell(product: Product) {
         self.product = product
-
+        
         productName.text = self.product?.name.capitalized
         if let price = self.product?.price {
             productPrice.text = String(price.toPriceString())

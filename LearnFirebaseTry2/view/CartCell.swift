@@ -27,16 +27,11 @@ class CartCell: UITableViewCell {
         amountLabel.text = "\(Int(stepper.value))"
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
     func configureCell(product: Product) {
         self.product = product
 
         amountLabel.text = "\(product.amount)"
+        stepper.value = Double(product.amount)
         priceLabel.text = "\(product.moneyWithCentsString)"
         nameLabel.text = product.name
         nameLabel.sizeToFit()
