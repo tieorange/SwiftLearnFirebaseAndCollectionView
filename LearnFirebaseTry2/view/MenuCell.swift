@@ -7,8 +7,11 @@
 //
 
 import UIKit
+
 import Kingfisher
-import AlamofireImage
+
+//import AlamofireImage
+import SDWebImage
 
 class MenuCell: UICollectionViewCell {
 
@@ -32,13 +35,9 @@ class MenuCell: UICollectionViewCell {
         }
         let url = URL(string: product.photoUrl)!
 
-//        productImage.kf.setImage(with: url, placehoder: "na")
+        productImage.kf.setImage(with: url)
 
-        let url = Bundle.main.url(forResource: product.photoUrl)!
-        let data = try! Data(contentsOf: url)
-        let image = UIImage(data: data, scale: UIScreen.main.scale)!
-        image.af_inflate()
-        productImage.image = image
+//        productImage.sd_setImage(with: url, placeholderImage: UIImage(named: "placeholder.png"))
     }
 
 }

@@ -11,4 +11,6 @@ target 'LearnFirebaseTry2' do
   pod 'FirebaseUI/Database', '~> 3.0'
   pod 'Kingfisher', '~> 3.0'
   pod 'AlamofireImage', '~> 3.1'
+  pod 'SDWebImage', '~>3.8'
+  pod 'SDWebImage/WebP'
 end
