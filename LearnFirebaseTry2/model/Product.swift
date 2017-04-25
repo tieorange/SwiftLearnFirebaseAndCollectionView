@@ -6,24 +6,16 @@
 import Foundation
 
 class Product: NSObject {
-    private var _name: String!
-    private var _price: Int!
-
-    var name: String {
-        return _name
-    }
-
-    var price: Int {
-        return _price
-    }
+    var name: String!
+    var price: Int!
 
     override init() {
         super.init()
     }
 
     init(name: String, price: Int) {
-        self._name = name
-        self._price = price
+        self.name = name
+        self.price = price
         super.init()
     }
 }

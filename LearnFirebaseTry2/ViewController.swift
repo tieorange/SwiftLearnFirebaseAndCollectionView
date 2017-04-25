@@ -39,10 +39,12 @@ class ViewController:
 
     private func initFirebase() {
         ref = FIRDatabase.database().reference()
-        ref?.child("products").observe(FIRDataEventType.childAdded, with: { (snapshot) in
+        ref?.child("products").observe(.childAdded, with: { (snapshot) in
             let dictionary = snapshot.value as? [String: AnyObject] ?? [:]
-            let product = Product()
-            product.setValuesForKeys(dictionary)
+            let product = Product(
+                    name: (dictionary["name"] as? String ?? ""),
+                    price: dictionary["price"] as? Int ?? 0)
+
             self.productsList.append(product)
             self.menuCollectionView.reloadData()
         })
