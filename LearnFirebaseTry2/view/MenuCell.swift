@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Kingfisher
+import AlamofireImage
 
 class MenuCell: UICollectionViewCell {
 
@@ -24,11 +26,19 @@ class MenuCell: UICollectionViewCell {
     func configureCell(product: Product) {
         self.product = product
 
-        productImage.image = UIImage(named: "nalesnik")
         productName.text = self.product?.name.capitalized
         if let price = self.product?.price {
             productPrice.text = String(price)
         }
+        let url = URL(string: product.photoUrl)!
+
+//        productImage.kf.setImage(with: url, placehoder: "na")
+
+        let url = Bundle.main.url(forResource: product.photoUrl)!
+        let data = try! Data(contentsOf: url)
+        let image = UIImage(data: data, scale: UIScreen.main.scale)!
+        image.af_inflate()
+        productImage.image = image
     }
 
 }

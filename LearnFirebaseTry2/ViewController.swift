@@ -28,9 +28,9 @@ class ViewController:
         menuCollectionView.dataSource = self
         menuCollectionView.delegate = self
 
+        /*productsList.append(getDummyProduct())
         productsList.append(getDummyProduct())
-        productsList.append(getDummyProduct())
-        productsList.append(getDummyProduct())
+        productsList.append(getDummyProduct())*/
     }
 
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -41,9 +41,12 @@ class ViewController:
         ref = FIRDatabase.database().reference()
         ref?.child("products").observe(.childAdded, with: { (snapshot) in
             let dictionary = snapshot.value as? [String: AnyObject] ?? [:]
+
+            // TODO extract to constructor in Product(snapshot)
             let product = Product(
                     name: (dictionary["name"] as? String ?? ""),
-                    price: dictionary["price"] as? Int ?? 0)
+                    price: dictionary["price"] as? Int ?? 0,
+                    photoUrl: dictionary["photoUrl"] as? String ?? "")
 
             self.productsList.append(product)
             self.menuCollectionView.reloadData()
@@ -73,7 +76,7 @@ class ViewController:
     }
 
     private func getDummyProduct() -> Product {
-        return Product(name: "nalesnik z serem", price: 4)
+        return Product(name: "nalesnik z serem", price: 4, photoUrl: "http://static.ilewazy.pl/wp-content/uploads/nalesnik-z-serkiem1-130g.jpg")
     }
 
 }
