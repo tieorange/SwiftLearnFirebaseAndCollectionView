@@ -19,14 +19,13 @@ class ViewController:
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        productsList.append(getDummyProduct())
-        productsList.append(getDummyProduct())
-        productsList.append(getDummyProduct())
-        
+
         menuCollectionView.dataSource = self
         menuCollectionView.delegate = self
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        productsList.append(getDummyProduct())
+        productsList.append(getDummyProduct())
+        productsList.append(getDummyProduct())
     }
 
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -35,8 +34,8 @@ class ViewController:
 
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCell", for: indexPath) as? MenuCell {
-//            let product = productsList.get
-//            cell.configureCell(product: product)
+            let product = productsList[indexPath.item]
+            cell.configureCell(product: product)
             return cell
         } else {
             return UICollectionViewCell()

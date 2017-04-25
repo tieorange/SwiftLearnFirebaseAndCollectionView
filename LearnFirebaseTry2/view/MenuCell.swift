@@ -13,14 +13,22 @@ class MenuCell: UICollectionViewCell {
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productPrice: UILabel!
-    private var product: Product = Product(name: "nalesnik", price: 4)
+    private var product: Product?
+
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        layer.cornerRadius = 15.0
+    }
+
 
     func configureCell(product: Product) {
         self.product = product
 
-//        productImage.image = UIImage(named: "nalesnik")
-        productName.text = self.product.name.capitalized
-        productPrice.text = String(self.product.price)
+        productImage.image = UIImage(named: "nalesnik")
+        productName.text = self.product?.name.capitalized
+        if let price = self.product?.price {
+            productPrice.text = String(price)
+        }
     }
 
 }
