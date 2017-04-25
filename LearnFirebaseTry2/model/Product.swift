@@ -5,7 +5,7 @@
 
 import Foundation
 
-class Product {
+class Product: NSObject {
     private var _name: String!
     private var _price: Int!
 
@@ -17,8 +17,13 @@ class Product {
         return _price
     }
 
+    override init() {
+        super.init()
+    }
+
     init(name: String, price: Int) {
         self._name = name
         self._price = price
+        super.init()
     }
 }

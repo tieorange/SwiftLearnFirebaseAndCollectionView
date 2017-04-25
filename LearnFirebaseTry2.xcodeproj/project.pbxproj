@@ -15,6 +15,7 @@
 		631F5C2D1EAE9D78008AB7A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631F5C2B1EAE9D78008AB7A5 /* LaunchScreen.storyboard */; };
 		6D11348F09176C6B45BEDEF4 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1132395A14357FDB9D0CE2 /* Product.swift */; };
 		6D11355C503B9A38CB1677FB /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D113119ADFF63579ECA7097 /* MenuCell.swift */; };
+		6D113BCEF969AFBE95B86A07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D113F1C7E29F06EE972FDD5 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		631F5C2E1EAE9D78008AB7A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D113119ADFF63579ECA7097 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		6D1132395A14357FDB9D0CE2 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		6D113F1C7E29F06EE972FDD5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BE89F8250EB937787F646803 /* Pods-LearnFirebaseTry2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnFirebaseTry2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LearnFirebaseTry2/Pods-LearnFirebaseTry2.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +82,7 @@
 				631F5C2E1EAE9D78008AB7A5 /* Info.plist */,
 				6D1136E1EAD1E6D8D10EA4E6 /* model */,
 				6D113AE8F0DA969E54D7115C /* view */,
+				6D113F1C7E29F06EE972FDD5 /* GoogleService-Info.plist */,
 			);
 			path = LearnFirebaseTry2;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				631F5C2D1EAE9D78008AB7A5 /* LaunchScreen.storyboard in Resources */,
 				631F5C2A1EAE9D78008AB7A5 /* Assets.xcassets in Resources */,
 				631F5C281EAE9D78008AB7A5 /* Main.storyboard in Resources */,
+				6D113BCEF969AFBE95B86A07 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

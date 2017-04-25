@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class ViewController:
         UIViewController,
@@ -16,13 +17,17 @@ class ViewController:
 
     @IBOutlet weak var menuCollectionView: UICollectionView!
     private var productsList = [Product]()
+    private var ref: FIRDatabaseReference?
 
+//    private var ref: FIRDatabaseReference
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        initFirebase()
+
         menuCollectionView.dataSource = self
         menuCollectionView.delegate = self
-        
+
         productsList.append(getDummyProduct())
         productsList.append(getDummyProduct())
         productsList.append(getDummyProduct())
@@ -30,6 +35,17 @@ class ViewController:
 
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return productsList.count
+    }
+
+    private func initFirebase() {
+        ref = FIRDatabase.database().reference()
+        ref?.child("products").observe(FIRDataEventType.childAdded, with: { (snapshot) in
+            let dictionary = snapshot.value as? [String: AnyObject] ?? [:]
+            let product = Product()
+            product.setValuesForKeys(dictionary)
+            self.productsList.append(product)
+            self.menuCollectionView.reloadData()
+        })
     }
 
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
