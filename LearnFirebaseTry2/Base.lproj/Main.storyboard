@@ -31,7 +31,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="menu_cell_id" id="YAZ-0T-0X6" customClass="MenuCollectionViewCell" customModule="LearnFirebaseTry2" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MenuCell" id="YAZ-0T-0X6" customClass="MenuCell" customModule="LearnFirebaseTry2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -72,7 +72,7 @@
                                             <constraint firstItem="XxF-rg-h6N" firstAttribute="top" secondItem="YAZ-0T-0X6" secondAttribute="top" id="zoF-Vd-BiC"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="image" destination="XxF-rg-h6N" id="n8G-jh-WVM"/>
+                                            <outlet property="productImage" destination="XxF-rg-h6N" id="3Hh-Ir-F2x"/>
                                             <outlet property="productName" destination="oCB-Iw-Hgh" id="8iG-Hd-Phq"/>
                                             <outlet property="productPrice" destination="2VS-un-vb2" id="2Bv-cP-eOW"/>
                                         </connections>
@@ -88,6 +88,9 @@
                             <constraint firstItem="yfb-zU-LT8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="dBo-4h-apo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="menuCollectionView" destination="yfb-zU-LT8" id="jix-H3-hpZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

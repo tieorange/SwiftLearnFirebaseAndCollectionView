@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuCollectionViewCell: UICollectionViewCell {
+class MenuCell: UICollectionViewCell {
 
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productName: UILabel!
@@ -18,7 +18,7 @@ class MenuCollectionViewCell: UICollectionViewCell {
     func configureCell(product: Product) {
         self.product = product
 
-        productImage.image = UIImage(named: "nalesnik")
+//        productImage.image = UIImage(named: "nalesnik")
         productName.text = self.product.name.capitalized
         productPrice.text = String(self.product.price)
     }
