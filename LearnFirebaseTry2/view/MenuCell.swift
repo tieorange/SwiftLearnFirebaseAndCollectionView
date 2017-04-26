@@ -18,6 +18,7 @@ class MenuCell: UICollectionViewCell {
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productPrice: UILabel!
+    @IBOutlet weak var productAmount: UILabel!
     private var product: Product?
 
     public required init?(coder aDecoder: NSCoder) {
@@ -36,6 +37,13 @@ class MenuCell: UICollectionViewCell {
         let url = URL(string: product.photoUrl)!
 
         productImage.kf.setImage(with: url)
+
+        if (product.amount > 0) {
+            productAmount.alpha = 1
+            productAmount.text = String(product.amount)
+        } else {
+            productAmount.alpha = 0
+        }
 
 //        productImage.sd_setImage(with: url, placeholderImage: UIImage(named: "placeholder.png"))
     }

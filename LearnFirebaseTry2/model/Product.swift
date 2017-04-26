@@ -9,6 +9,7 @@ class Product: NSObject {
     var name: String!
     var price: Int!
     var photoUrl: String!
+    var amount = 0
 
     override init() {
         super.init()

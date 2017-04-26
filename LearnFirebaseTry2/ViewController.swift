@@ -19,6 +19,7 @@ class ViewController:
     @IBOutlet weak var menuCollectionView: UICollectionView!
     private var productsList = [Product]()
     private var ref: FIRDatabaseReference?
+    private var lastOpenedIndex = -1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +65,7 @@ class ViewController:
     }
 
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        lastOpenedIndex = indexPath.row
         let product = productsList[indexPath.row]
         performSegue(withIdentifier: "ProductDetail", sender: product)
     }
@@ -89,7 +91,7 @@ class ViewController:
     }
 
     func writeValueBack(productIndex: Int, amount: Int) {
-        productsList[productIndex].price = amount
+        productsList[lastOpenedIndex].amount = amount
         self.menuCollectionView.reloadData()
     }
 
