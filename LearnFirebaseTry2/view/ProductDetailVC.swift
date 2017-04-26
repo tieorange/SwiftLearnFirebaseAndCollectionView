@@ -15,8 +15,10 @@ class ProductDetailVC: UIViewController {
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var amount: UILabel!
     @IBOutlet weak var addToCart: UIButton!
+    @IBOutlet weak var stepper: UIStepper!
 
     var product: Product?
+    var delegate: writeValueBackDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +31,18 @@ class ProductDetailVC: UIViewController {
     }
 
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
-        let amountString = String(Int(sender.value))
+        let amountString = String(getStepperCount())
         amount.text = amountString
         addToCart.setTitle("Add \(amountString) to cart", for: .normal)
     }
 
     @IBAction func addToCartClick(_ sender: Any) {
+        delegate?.writeValueBack(productIndex: 0, amount: getStepperCount())
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
+    }
+
+    func getStepperCount() -> Int {
+        return Int(stepper.value)
     }
 }

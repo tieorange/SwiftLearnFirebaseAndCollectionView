@@ -13,7 +13,8 @@ class ViewController:
         UIViewController,
         UICollectionViewDelegate,
         UICollectionViewDataSource,
-        UICollectionViewDelegateFlowLayout {
+        UICollectionViewDelegateFlowLayout,
+        writeValueBackDelegate {
 
     @IBOutlet weak var menuCollectionView: UICollectionView!
     private var productsList = [Product]()
@@ -80,12 +81,17 @@ class ViewController:
         if (segue.identifier == "ProductDetail") {
             if let detailsVC = segue.destination as? ProductDetailVC {
                 if let product = sender as? Product {
+                    detailsVC.delegate = self
                     detailsVC.product = product
                 }
             }
         }
     }
 
+    func writeValueBack(productIndex: Int, amount: Int) {
+        productsList[productIndex].price = amount
+        self.menuCollectionView.reloadData()
+    }
 
 }
 

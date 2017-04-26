@@ -181,6 +181,7 @@
                         <outlet property="amount" destination="ncJ-qj-YGj" id="IzR-kV-LG1"/>
                         <outlet property="productImage" destination="YoT-rJ-xgF" id="fXQ-vf-cg6"/>
                         <outlet property="productName" destination="dml-YE-kT9" id="J6r-0Y-dhV"/>
+                        <outlet property="stepper" destination="1KE-SO-Bjq" id="zCz-29-heN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m1W-Jh-XRf" userLabel="First Responder" sceneMemberID="firstResponder"/>
