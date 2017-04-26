@@ -31,7 +31,7 @@ class MenuCell: UICollectionViewCell {
 
         productName.text = self.product?.name.capitalized
         if let price = self.product?.price {
-            productPrice.text = String(price)
+            productPrice.text = String(price.toPriceString())
         }
         let url = URL(string: product.photoUrl)!
 
