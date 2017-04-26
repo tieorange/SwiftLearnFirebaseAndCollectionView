@@ -63,7 +63,8 @@ class ViewController:
     }
 
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("selected at \(indexPath)")
+        let product = productsList[indexPath.row]
+        performSegue(withIdentifier: "ProductDetail", sender: product)
     }
 
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -74,6 +75,17 @@ class ViewController:
     private func getDummyProduct() -> Product {
         return Product(name: "nalesnik z serem", price: 4, photoUrl: "http://static.ilewazy.pl/wp-content/uploads/nalesnik-z-serkiem1-130g.jpg")
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "ProductDetail") {
+            if let detailsVC = segue.destination as? ProductDetailVC {
+                if let product = sender as? Product {
+                    detailsVC.product = product
+                }
+            }
+        }
+    }
+
 
 }
 
