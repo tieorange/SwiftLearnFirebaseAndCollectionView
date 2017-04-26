@@ -19,7 +19,6 @@ class ViewController:
     private var productsList = [Product]()
     private var ref: FIRDatabaseReference?
 
-//    private var ref: FIRDatabaseReference
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,10 +26,6 @@ class ViewController:
 
         menuCollectionView.dataSource = self
         menuCollectionView.delegate = self
-
-        /*productsList.append(getDummyProduct())
-        productsList.append(getDummyProduct())
-        productsList.append(getDummyProduct())*/
     }
 
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -72,7 +67,8 @@ class ViewController:
     }
 
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 105, height: 105)
+        let width = collectionView.bounds.width / 2.1
+        return CGSize(width: width, height: 105)
     }
 
     private func getDummyProduct() -> Product {

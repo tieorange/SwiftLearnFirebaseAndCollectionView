@@ -11,7 +11,7 @@ import UIKit
 import Kingfisher
 
 //import AlamofireImage
-import SDWebImage
+//import SDWebImage
 
 class MenuCell: UICollectionViewCell {
 
@@ -22,7 +22,7 @@ class MenuCell: UICollectionViewCell {
 
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        layer.cornerRadius = 15.0
+        layer.cornerRadius = 6.0
     }
 
 
