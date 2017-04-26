@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ProductDetailVC: UIViewController {
-    
+
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var amount: UILabel!
@@ -23,18 +24,11 @@ class ProductDetailVC: UIViewController {
 
     private func initProduct() {
         productName.text = product!.name
+        productImage.kf.setImage(with: URL(string: product?.photoUrl ?? ""))
     }
 
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
+        amount.text = String(Int(sender.value))
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
