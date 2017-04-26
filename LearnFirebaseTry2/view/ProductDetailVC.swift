@@ -14,6 +14,7 @@ class ProductDetailVC: UIViewController {
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var amount: UILabel!
+    @IBOutlet weak var addToCart: UIButton!
 
     var product: Product?
 
@@ -28,7 +29,13 @@ class ProductDetailVC: UIViewController {
     }
 
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
-        amount.text = String(Int(sender.value))
+        let amountString = String(Int(sender.value))
+        amount.text = amountString
+        addToCart.setTitle("Add \(amountString) to cart", for: .normal)
     }
 
+    @IBAction func addToCartClick(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
+    }
 }
