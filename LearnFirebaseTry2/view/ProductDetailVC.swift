@@ -8,7 +8,7 @@
 
 import UIKit
 import Kingfisher
-import RealmSwift
+import ChameleonFramework
 
 class ProductDetailVC: UIViewController {
 
@@ -21,8 +21,6 @@ class ProductDetailVC: UIViewController {
     var product: Product?
     var delegate: writeValueBackDelegate?
 
-    private let realm = try! Realm()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         initProduct()
@@ -31,21 +29,24 @@ class ProductDetailVC: UIViewController {
     private func initProduct() {
         productName.text = product!.name
         productImage.kf.setImage(with: URL(string: product?.photoUrl ?? ""))
-        let productAmount = ProductsModel.getAmountByPrimaryKey(primaryKey: product?.name ?? "", realm: realm)
-        stepper.value = Double(productAmount)
-        amount.text = String(productAmount)
+        updateAmountValues()
     }
 
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
-        let amountString = String(getStepperCount())
-        amount.text = amountString
-        addToCart.setTitle("Add \(amountString) to cart", for: .normal)
+        updateAmountValues()
     }
 
     @IBAction func addToCartClick(_ sender: Any) {
         delegate?.writeValueBack(amount: getStepperCount())
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
+    }
+
+    private func updateAmountValues() {
+        let amountInt = getStepperCount()
+        product!.amount = amountInt
+        addToCart.setTitle("Add \(amountInt) to cart \t \(product!.sumMoneyWithCentsString)zł", for: .normal)
+        amount.text = String(amountInt)
     }
 
     func getStepperCount() -> Int {

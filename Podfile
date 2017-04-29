@@ -11,6 +11,8 @@ target 'LearnFirebaseTry2' do
   pod 'FirebaseUI/Database', '~> 3.0'
   pod 'Kingfisher', '~> 3.0'
   pod 'RealmSwift'
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+  pod "Floaty", "~> 3.0.0"
 end
 
 post_install do |installer|

@@ -32,4 +32,19 @@ class Product: Object {
         }
     }
 
+    var moneyWithCentsString: String {
+        get {
+            return "\(moneyWithCents)0"
+        }
+    }
+
+    var sumMoneyWithCentsString: String {
+        get {
+            if (amount <= 0) {
+                return moneyWithCentsString
+            }
+            return "\(Double(amount) * moneyWithCents)0"
+        }
+    }
+
 }

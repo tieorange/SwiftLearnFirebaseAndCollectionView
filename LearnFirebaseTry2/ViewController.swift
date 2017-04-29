@@ -54,6 +54,9 @@ class ViewController:
                     photoUrl: dictionary["photoUrl"] as? String ?? "")
 
             product.amount = ProductsModel.getAmountByPrimaryKey(primaryKey: product.name, realm: self.realm)
+            if (product.amount > 0) {
+                self.refreshOrderSum()
+            }
 
             self.productsList.append(product)
             self.menuCollectionView.reloadData()
@@ -124,7 +127,7 @@ class ViewController:
         }
 
         if (isAnyProductAdded) {
-            orderSum.text = String(sum)
+            orderSum.text = "\(sum)0"
             orderSum.isHidden = false
         } else {
             orderSum.isHidden = true
