@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import RealmSwift
 
 class ProductDetailVC: UIViewController {
 
@@ -20,14 +21,23 @@ class ProductDetailVC: UIViewController {
     var product: Product?
     var delegate: writeValueBackDelegate?
 
+    private let realm = try! Realm()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         initProduct()
     }
+
 
     private func initProduct() {
         productName.text = product!.name
         productImage.kf.setImage(with: URL(string: product?.photoUrl ?? ""))
+        let productAmount = realm.object(ofType: Product.self, forPrimaryKey: product?.name ?? "")?.amount = 0
+        stepper.value = Double(productAmount)
     }
 
     @IBAction func stepperValueChanged(_ sender: UIStepper) {

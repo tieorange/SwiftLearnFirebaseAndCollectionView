@@ -19,6 +19,10 @@ class Product: Object {
         self.photoUrl = photoUrl
     }
 
+    override static func primaryKey() -> String? {
+        return "name"
+    }
+
     var moneyWithCents: Double {
         get {
             return Double(price) / 100.0

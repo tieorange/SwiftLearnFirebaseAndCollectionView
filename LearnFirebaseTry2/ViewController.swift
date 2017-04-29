@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import RealmSwift
 
 class ViewController:
         UIViewController,
@@ -20,7 +21,9 @@ class ViewController:
     @IBOutlet weak var orderSum: UILabel!
     private var productsList = [Product]()
     private var ref: FIRDatabaseReference?
+    private let realm = try! Realm()
     private var lastOpenedIndex = -1
+    // TODO: save to userDefaults
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,7 +96,16 @@ class ViewController:
 
     func writeValueBack(amount: Int) {
         if (lastOpenedIndex >= 0) {
-            productsList[lastOpenedIndex].amount = amount
+            let selectedProduct = productsList[lastOpenedIndex]
+
+            try! realm.write {
+                selectedProduct.amount = amount
+                realm.add(selectedProduct, update: true)
+            }
+
+            let allProducts = realm.objects(Product.self)
+            print("Products in a cart \(allProducts)")
+
             self.menuCollectionView.reloadData()
             refreshOrderSum()
         }
