@@ -25,19 +25,15 @@ class ProductDetailVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         initProduct()
     }
-
 
     private func initProduct() {
         productName.text = product!.name
         productImage.kf.setImage(with: URL(string: product?.photoUrl ?? ""))
-        let productAmount = realm.object(ofType: Product.self, forPrimaryKey: product?.name ?? "")?.amount = 0
+        let productAmount = ProductsModel.getAmountByPrimaryKey(primaryKey: product?.name ?? "", realm: realm)
         stepper.value = Double(productAmount)
+        amount.text = String(productAmount)
     }
 
     @IBAction func stepperValueChanged(_ sender: UIStepper) {

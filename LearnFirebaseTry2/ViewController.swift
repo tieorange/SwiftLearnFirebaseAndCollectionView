@@ -53,6 +53,8 @@ class ViewController:
                     price: dictionary["price"] as? Int ?? 0,
                     photoUrl: dictionary["photoUrl"] as? String ?? "")
 
+            product.amount = ProductsModel.getAmountByPrimaryKey(primaryKey: product.name, realm: self.realm)
+
             self.productsList.append(product)
             self.menuCollectionView.reloadData()
         })
