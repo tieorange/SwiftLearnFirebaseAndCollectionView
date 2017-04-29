@@ -7,11 +7,7 @@
 //
 
 import UIKit
-
 import Kingfisher
-
-//import AlamofireImage
-//import SDWebImage
 
 class MenuCell: UICollectionViewCell {
 

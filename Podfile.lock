@@ -1,7 +1,4 @@
 PODS:
-  - Alamofire (4.4.0)
-  - AlamofireImage (3.2.0):
-    - Alamofire (~> 4.1)
   - Firebase/Core (3.16.0):
     - FirebaseAnalytics (= 3.8.0)
     - FirebaseCore (= 3.6.0)
@@ -24,49 +21,20 @@ PODS:
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - Kingfisher (3.6.2)
-  - libwebp (0.5.1):
-    - libwebp/core (= 0.5.1)
-    - libwebp/dec (= 0.5.1)
-    - libwebp/demux (= 0.5.1)
-    - libwebp/dsp (= 0.5.1)
-    - libwebp/enc (= 0.5.1)
-    - libwebp/mux (= 0.5.1)
-    - libwebp/utils (= 0.5.1)
-    - libwebp/webp (= 0.5.1)
-  - libwebp/core (0.5.1):
-    - libwebp/webp
-  - libwebp/dec (0.5.1):
-    - libwebp/core
-  - libwebp/demux (0.5.1):
-    - libwebp/core
-  - libwebp/dsp (0.5.1):
-    - libwebp/core
-  - libwebp/enc (0.5.1):
-    - libwebp/core
-  - libwebp/mux (0.5.1):
-    - libwebp/core
-  - libwebp/utils (0.5.1):
-    - libwebp/core
-  - libwebp/webp (0.5.1)
-  - SDWebImage (3.8.2):
-    - SDWebImage/Core (= 3.8.2)
-  - SDWebImage/Core (3.8.2)
-  - SDWebImage/WebP (3.8.2):
-    - libwebp
-    - SDWebImage/Core
+  - Realm (2.6.2):
+    - Realm/Headers (= 2.6.2)
+  - Realm/Headers (2.6.2)
+  - RealmSwift (2.6.2):
+    - Realm (= 2.6.2)
 
 DEPENDENCIES:
-  - AlamofireImage (~> 3.1)
   - Firebase/Core
   - Firebase/Database
   - FirebaseUI/Database (~> 3.0)
   - Kingfisher (~> 3.0)
-  - SDWebImage (~> 3.8)
-  - SDWebImage/WebP
+  - RealmSwift
 
 SPEC CHECKSUMS:
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   Firebase: 21bf4a89d3f01bfbe11adc3a5d934a4a3d3a5fd6
   FirebaseAnalytics: 920e46455f27b0a52a80907a6d9b73ee4bd1c635
   FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
@@ -75,9 +43,9 @@ SPEC CHECKSUMS:
   FirebaseUI: 6e99ff95e369f5858232e4f65bff215458fe8469
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   Kingfisher: 2c94e72c6830622c71d06adf4ea024c37d316830
-  libwebp: b9126f8982a95370cf4eaad9bb3fefd57f052c15
-  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  Realm: 29222766425b9f831228f81b63f0e38a97a4d700
+  RealmSwift: d161a80f96cb91ae88391a7d5a9cf08024a7bc8e
 
-PODFILE CHECKSUM: 078deffa2fe34a9d35d8bc2541bd2c0f151f09d1
+PODFILE CHECKSUM: fa6432af38aa26a2eeed8eacf3d78f1d73f6f593
 
 COCOAPODS: 1.2.1

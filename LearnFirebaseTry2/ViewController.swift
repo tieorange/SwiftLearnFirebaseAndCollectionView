@@ -104,7 +104,7 @@ class ViewController:
         var isAnyProductAdded = false
         productsList.forEach {
             if ($0.amount > 0) {
-                sum += $0.moneyWithCents
+                sum += $0.moneyWithCents * Double($0.amount)
                 isAnyProductAdded = true
             }
         }

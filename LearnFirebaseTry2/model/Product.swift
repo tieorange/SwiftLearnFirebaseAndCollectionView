@@ -4,23 +4,19 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Product: NSObject {
-    var name: String!
-    var price: Int!
-    var photoUrl: String!
-    var amount = 0
+class Product: Object {
+    dynamic var name = ""
+    dynamic var price = 0
+    dynamic var photoUrl = ""
+    dynamic var amount = 0
 
-    override init() {
-        super.init()
-    }
-
-    init(name: String, price: Int, photoUrl: String) {
+    convenience public init(name: String, price: Int, photoUrl: String) {
+        self.init()
         self.name = name
         self.price = price
         self.photoUrl = photoUrl
-
-        super.init()
     }
 
     var moneyWithCents: Double {
@@ -31,6 +27,5 @@ class Product: NSObject {
             price = Int(value * 100)
         }
     }
-
 
 }
