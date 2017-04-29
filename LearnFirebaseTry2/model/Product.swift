@@ -23,5 +23,14 @@ class Product: NSObject {
         super.init()
     }
 
+    var moneyWithCents: Double {
+        get {
+            return Double(price) / 100.0
+        }
+        set(value) {
+            price = Int(value * 100)
+        }
+    }
+
 
 }

@@ -37,7 +37,7 @@ class ProductDetailVC: UIViewController {
     }
 
     @IBAction func addToCartClick(_ sender: Any) {
-        delegate?.writeValueBack(productIndex: 0, amount: getStepperCount())
+        delegate?.writeValueBack(amount: getStepperCount())
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
     }

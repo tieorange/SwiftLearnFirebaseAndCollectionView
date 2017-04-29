@@ -24,6 +24,7 @@ class MenuCell: UICollectionViewCell {
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         layer.cornerRadius = 6.0
+
     }
 
 
@@ -39,13 +40,11 @@ class MenuCell: UICollectionViewCell {
         productImage.kf.setImage(with: url)
 
         if (product.amount > 0) {
-            productAmount.alpha = 1
+            productAmount.isHidden = false
             productAmount.text = String(product.amount)
         } else {
-            productAmount.alpha = 0
+            productAmount.isHidden = true
         }
-
-//        productImage.sd_setImage(with: url, placeholderImage: UIImage(named: "placeholder.png"))
     }
 
 }

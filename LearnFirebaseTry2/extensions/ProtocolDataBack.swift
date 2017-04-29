@@ -6,5 +6,5 @@
 import Foundation
 
 protocol writeValueBackDelegate {
-    func writeValueBack(productIndex: Int, amount: Int)
+    func writeValueBack(amount: Int)
 }

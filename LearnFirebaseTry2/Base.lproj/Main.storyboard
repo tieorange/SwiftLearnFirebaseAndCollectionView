@@ -98,6 +98,16 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sum:  15.50 zł" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zo5-jo-WMj">
+                                <rect key="frame" x="0.0" y="538" width="320" height="30"/>
+                                <color key="backgroundColor" red="0.9212072491645813" green="0.84832113981246948" blue="0.62377804517745972" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9F4-hV-JhN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -105,6 +115,9 @@
                             <constraint firstAttribute="trailing" secondItem="yfb-zU-LT8" secondAttribute="trailing" id="A1s-Yd-LPT"/>
                             <constraint firstItem="yfb-zU-LT8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="K0p-SF-u47"/>
                             <constraint firstItem="yfb-zU-LT8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-64" id="dBo-4h-apo"/>
+                            <constraint firstAttribute="trailing" secondItem="Zo5-jo-WMj" secondAttribute="trailing" id="lpm-ZD-ye0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Zo5-jo-WMj" secondAttribute="bottom" id="r5L-N2-ryY"/>
+                            <constraint firstItem="Zo5-jo-WMj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vwi-6H-o96"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="PJA Buffet" id="n8h-Lj-2fb">
@@ -112,6 +125,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="menuCollectionView" destination="yfb-zU-LT8" id="jix-H3-hpZ"/>
+                        <outlet property="orderSum" destination="Zo5-jo-WMj" id="Arv-zR-fTX"/>
                         <segue destination="zWm-Ff-k1K" kind="show" identifier="ProductDetail" id="XMh-sQ-YK7"/>
                     </connections>
                 </viewController>

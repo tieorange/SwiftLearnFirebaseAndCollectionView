@@ -17,6 +17,7 @@ class ViewController:
         writeValueBackDelegate {
 
     @IBOutlet weak var menuCollectionView: UICollectionView!
+    @IBOutlet weak var orderSum: UILabel!
     private var productsList = [Product]()
     private var ref: FIRDatabaseReference?
     private var lastOpenedIndex = -1
@@ -28,6 +29,7 @@ class ViewController:
 
         menuCollectionView.dataSource = self
         menuCollectionView.delegate = self
+        orderSum.isHidden = true
     }
 
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -35,7 +37,10 @@ class ViewController:
     }
 
     private func initFirebase() {
-        ref = FIRDatabase.database().reference()
+        let database = FIRDatabase.database()
+        database.persistenceEnabled = true
+        ref = database.reference()
+        ref?.keepSynced(true)
         ref?.child("products").observe(.childAdded, with: { (snapshot) in
             let dictionary = snapshot.value as? [String: AnyObject] ?? [:]
 
@@ -58,10 +63,6 @@ class ViewController:
         } else {
             return UICollectionViewCell()
         }
-    }
-
-    public func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
     }
 
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -90,9 +91,30 @@ class ViewController:
         }
     }
 
-    func writeValueBack(productIndex: Int, amount: Int) {
-        productsList[lastOpenedIndex].amount = amount
-        self.menuCollectionView.reloadData()
+    func writeValueBack(amount: Int) {
+        if (lastOpenedIndex >= 0) {
+            productsList[lastOpenedIndex].amount = amount
+            self.menuCollectionView.reloadData()
+            refreshOrderSum()
+        }
+    }
+
+    func refreshOrderSum() {
+        var sum = 0.0
+        var isAnyProductAdded = false
+        productsList.forEach {
+            if ($0.amount > 0) {
+                sum += $0.moneyWithCents
+                isAnyProductAdded = true
+            }
+        }
+
+        if (isAnyProductAdded) {
+            orderSum.text = String(sum)
+            orderSum.isHidden = false
+        } else {
+            orderSum.isHidden = true
+        }
     }
 
 }
