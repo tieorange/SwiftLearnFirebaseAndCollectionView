@@ -168,7 +168,7 @@
 				TargetAttributes = {
 					631F5C1E1EAE9D78008AB7A5 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = G4T5ATNHCG;
+						DevelopmentTeam = PFFU3MHQ7Q;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -391,7 +391,7 @@
 			baseConfigurationReference = BE89F8250EB937787F646803 /* Pods-LearnFirebaseTry2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = G4T5ATNHCG;
+				DEVELOPMENT_TEAM = PFFU3MHQ7Q;
 				INFOPLIST_FILE = LearnFirebaseTry2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -407,7 +407,7 @@
 			baseConfigurationReference = 02F89508C14345F255D5E849 /* Pods-LearnFirebaseTry2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = G4T5ATNHCG;
+				DEVELOPMENT_TEAM = PFFU3MHQ7Q;
 				INFOPLIST_FILE = LearnFirebaseTry2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
