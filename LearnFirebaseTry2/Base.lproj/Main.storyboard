@@ -137,11 +137,64 @@
                         <outlet property="menuCollectionView" destination="yfb-zU-LT8" id="jix-H3-hpZ"/>
                         <outlet property="orderSum" destination="Zo5-jo-WMj" id="Arv-zR-fTX"/>
                         <segue destination="zWm-Ff-k1K" kind="show" identifier="ProductDetail" id="XMh-sQ-YK7"/>
+                        <segue destination="WI9-7M-Qmr" kind="show" id="Rp2-cc-r04"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1074.375" y="136.26760563380282"/>
+        </scene>
+        <!--CartVC View Controller-->
+        <scene sceneID="KEp-Sq-jtq">
+            <objects>
+                <viewController id="WI9-7M-Qmr" customClass="CartVCViewController" customModule="LearnFirebaseTry2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xj6-Iz-45B"/>
+                        <viewControllerLayoutGuide type="bottom" id="YxL-W7-HAa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7fK-kl-oWP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aEa-LZ-PzO">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="30" id="4RO-NF-5mh" customClass="CartCell" customModule="LearnFirebaseTry2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="30"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4RO-NF-5mh" id="ehz-Qw-8us">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="29.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXp-CW-2Ak">
+                                                    <rect key="frame" x="8" y="4" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="aEa-LZ-PzO" secondAttribute="trailing" id="C3g-z5-DbB"/>
+                            <constraint firstItem="YxL-W7-HAa" firstAttribute="top" secondItem="aEa-LZ-PzO" secondAttribute="bottom" id="Shj-3m-2a1"/>
+                            <constraint firstItem="aEa-LZ-PzO" firstAttribute="top" secondItem="xj6-Iz-45B" secondAttribute="bottom" id="Smr-vO-mmF"/>
+                            <constraint firstItem="aEa-LZ-PzO" firstAttribute="leading" secondItem="7fK-kl-oWP" secondAttribute="leading" id="Yyb-cd-2SF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="aEa-LZ-PzO" id="Mlq-vc-KYc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lYG-kK-4yf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1957.5" y="-527.11267605633805"/>
         </scene>
         <!--Product DetailVC-->
         <scene sceneID="fMN-zA-g2G">
