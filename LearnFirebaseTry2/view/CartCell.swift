@@ -10,6 +10,11 @@ import UIKit
 
 class CartCell: UITableViewCell {
 
+    @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var stepper: UIStepper!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+
     var product: Product!
 
     override func awakeFromNib() {
@@ -25,8 +30,10 @@ class CartCell: UITableViewCell {
 
     func configureCell(product: Product) {
         self.product = product
-        
 
+        amountLabel.text = "\(product.amount)"
+        priceLabel.text = "\(product.moneyWithCentsString)"
+        nameLabel.text = product.name
     }
 
 }

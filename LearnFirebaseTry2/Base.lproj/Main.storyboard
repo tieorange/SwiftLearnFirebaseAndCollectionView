@@ -200,7 +200,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dfsdfdsfdsfdsfdssdfdsfdsf" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuI-jh-y3n" userLabel="name">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="d" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuI-jh-y3n" userLabel="name">
                                                     <rect key="frame" x="22" y="19" width="132" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -208,7 +208,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="tbW-YB-oNx" secondAttribute="trailing" constant="6" id="2ax-JP-Nh0"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="tbW-YB-oNx" secondAttribute="trailing" constant="6" id="2ax-JP-Nh0"/>
                                                 <constraint firstItem="HuI-jh-y3n" firstAttribute="leading" secondItem="vXp-CW-2Ak" secondAttribute="trailing" constant="8" id="ANd-7i-AsJ"/>
                                                 <constraint firstItem="iZV-UX-jd7" firstAttribute="centerY" secondItem="ehz-Qw-8us" secondAttribute="centerY" id="CKl-df-mga"/>
                                                 <constraint firstItem="vXp-CW-2Ak" firstAttribute="leading" secondItem="ehz-Qw-8us" secondAttribute="leading" constant="6" id="Ftb-HF-RcZ"/>
@@ -219,6 +219,12 @@
                                                 <constraint firstItem="tbW-YB-oNx" firstAttribute="centerY" secondItem="ehz-Qw-8us" secondAttribute="centerY" id="lZN-fx-r7K"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="amountLabel" destination="vXp-CW-2Ak" id="3mL-2F-SEw"/>
+                                            <outlet property="nameLabel" destination="HuI-jh-y3n" id="E5O-Me-I5Z"/>
+                                            <outlet property="priceLabel" destination="tbW-YB-oNx" id="KaV-qQ-R1V"/>
+                                            <outlet property="stepper" destination="iZV-UX-jd7" id="6o2-uw-9ya"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

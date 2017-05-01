@@ -45,7 +45,7 @@ class ProductDetailVC: UIViewController {
     private func updateAmountValues() {
         let amountInt = getStepperCount()
         product!.amount = amountInt
-        addToCart.setTitle("Add \(amountInt) to cart \t \(product!.sumMoneyWithCentsString)zł", for: .normal)
+        addToCart.setTitle("Add \(amountInt) to cart \t \(product!.sumMoneyWithCentsString)", for: .normal)
         amount.text = String(amountInt)
     }
 
