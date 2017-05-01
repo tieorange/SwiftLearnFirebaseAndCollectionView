@@ -10,6 +10,8 @@ import UIKit
 
 class CartCell: UITableViewCell {
 
+    var product: Product!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,6 +24,8 @@ class CartCell: UITableViewCell {
     }
 
     func configureCell(product: Product) {
+        self.product = product
+        
 
     }
 
