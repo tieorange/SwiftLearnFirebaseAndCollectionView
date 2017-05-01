@@ -84,12 +84,22 @@ class ViewController:
         return CGSize(width: width, height: 125.0)
     }
 
+    @IBAction func onClickCheckout(_ sender: UITapGestureRecognizer) {
+        let inCart = realm.objects(Product.self)
+        performSegue(withIdentifier: "CartVC", sender: inCart)
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "ProductDetail") {
             if let detailsVC = segue.destination as? ProductDetailVC {
                 if let product = sender as? Product {
                     detailsVC.delegate = self
                     detailsVC.product = product
+                }
+            }
+        } else if(segue.identifier == "CartVC"){
+            if let cartVC = segue.destination as? CartVC{
+                if let product = sender as? [Product]{
+//                    cartVC.productsList
                 }
             }
         }

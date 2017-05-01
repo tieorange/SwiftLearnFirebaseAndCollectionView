@@ -1,5 +1,5 @@
 //
-//  CartVCViewController.swift
+//  CartVC.swift
 //  LearnFirebaseTry2
 //
 //  Created by Andrii Kovalchuk on 01/05/2017.
@@ -7,18 +7,21 @@
 //
 
 import UIKit
+import RealmSwift
 
-class CartVCViewController:
+class CartVC:
         UIViewController,
         UITableViewDelegate,
         UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
 
-    var productsList: [Product] = []
+    var productsList: Results<Product>!
+    var realm = try! Realm()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        productsList = realm.objects(Product.self)
 
         tableView.dataSource = self
         tableView.delegate = self

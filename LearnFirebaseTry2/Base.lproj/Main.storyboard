@@ -115,6 +115,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7PK-5A-MaZ"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="UHx-qO-O6E" appends="YES" id="mYc-u6-o7W"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -138,17 +141,22 @@
                         <outlet property="menuCollectionView" destination="yfb-zU-LT8" id="jix-H3-hpZ"/>
                         <outlet property="orderSum" destination="Zo5-jo-WMj" id="Arv-zR-fTX"/>
                         <segue destination="zWm-Ff-k1K" kind="show" identifier="ProductDetail" id="XMh-sQ-YK7"/>
-                        <segue destination="WI9-7M-Qmr" kind="show" id="Rp2-cc-r04"/>
+                        <segue destination="WI9-7M-Qmr" kind="show" identifier="CartVC" id="Rp2-cc-r04"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="UHx-qO-O6E">
+                    <connections>
+                        <action selector="onClickCheckout:" destination="BYZ-38-t0r" id="f9M-Vt-UB8"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1074.375" y="136.26760563380282"/>
         </scene>
         <!--CartVC View Controller-->
         <scene sceneID="KEp-Sq-jtq">
             <objects>
-                <viewController id="WI9-7M-Qmr" customClass="CartVCViewController" customModule="LearnFirebaseTry2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WI9-7M-Qmr" customClass="CartVC" customModule="LearnFirebaseTry2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xj6-Iz-45B"/>
                         <viewControllerLayoutGuide type="bottom" id="YxL-W7-HAa"/>
