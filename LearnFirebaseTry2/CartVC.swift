@@ -15,7 +15,8 @@ class CartVC:
         UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var checkoutButton: CheckoutButton!
+    
     var productsList: Results<Product>!
     var realm = try! Realm()
 

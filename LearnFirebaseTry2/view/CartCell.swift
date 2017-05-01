@@ -19,11 +19,16 @@ class CartCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = UITableViewCellSelectionStyle.none
         // Initialization code
     }
 
+    @IBAction func stepperValueChanged(_ sender: UIStepper) {
+        amountLabel.text = "\(Int(stepper.value))"
+    }
+
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+//        super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
@@ -34,6 +39,7 @@ class CartCell: UITableViewCell {
         amountLabel.text = "\(product.amount)"
         priceLabel.text = "\(product.moneyWithCentsString)"
         nameLabel.text = product.name
+        nameLabel.sizeToFit()
     }
 
 }
