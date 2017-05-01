@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckoutButton" customModule="LearnFirebaseTry2" customModuleProvider="target">
+            <connections>
+                <outlet property="price" destination="BoC-0t-pL3" id="Mnb-09-Xfg"/>
+                <outlet property="view" destination="iN0-l3-epB" id="GgY-gx-WaO"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="51"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24.50 zł" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BoC-0t-pL3">
+                    <rect key="frame" x="16" y="15" width="61.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHECKOUT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4G5-BE-C16">
+                    <rect key="frame" x="109.5" y="14" width="101.5" height="23"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(2)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJQ-N7-EUQ">
+                    <rect key="frame" x="282.5" y="15" width="21.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.23018704354763031" green="0.77713233232498169" blue="0.3158949613571167" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="yJQ-N7-EUQ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="DuQ-Cb-PLM"/>
+                <constraint firstItem="4G5-BE-C16" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="P11-jp-yox"/>
+                <constraint firstItem="4G5-BE-C16" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="UHR-1b-dnD"/>
+                <constraint firstAttribute="trailing" secondItem="yJQ-N7-EUQ" secondAttribute="trailing" constant="16" id="ZWc-pu-Rsd"/>
+                <constraint firstItem="BoC-0t-pL3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="kHY-UA-IpO"/>
+                <constraint firstItem="BoC-0t-pL3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="rS4-UF-tig"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="14.5" y="-253.5"/>
+        </view>
+    </objects>
+</document>
