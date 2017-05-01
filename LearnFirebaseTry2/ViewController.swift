@@ -35,10 +35,6 @@ class ViewController:
         orderSum.isHidden = true
     }
 
-    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return productsList.count
-    }
-
     private func initFirebase() {
         let database = FIRDatabase.database()
         database.persistenceEnabled = true
@@ -63,6 +59,10 @@ class ViewController:
         })
     }
 
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return productsList.count
+    }
+
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCell", for: indexPath) as? MenuCell {
             let product = productsList[indexPath.item]
@@ -82,10 +82,6 @@ class ViewController:
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.bounds.width / 2.2
         return CGSize(width: width, height: 125.0)
-    }
-
-    private func getDummyProduct() -> Product {
-        return Product(name: "nalesnik z serem", price: 4, photoUrl: "http://static.ilewazy.pl/wp-content/uploads/nalesnik-z-serkiem1-130g.jpg")
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
