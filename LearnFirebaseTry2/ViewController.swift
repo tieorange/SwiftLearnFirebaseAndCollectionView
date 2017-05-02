@@ -17,13 +17,12 @@ class ViewController:
         UICollectionViewDelegateFlowLayout,
         writeValueBackDelegate {
 
+    @IBOutlet weak var checkoutButton: CheckoutButtonView!
     @IBOutlet weak var menuCollectionView: UICollectionView!
-    @IBOutlet weak var orderSum: UILabel!
+    private var lastOpenedCellIndex = -1
     private var productsList = [Product]()
     private var ref: FIRDatabaseReference?
     private let realm = try! Realm()
-    private var lastOpenedIndex = -1
-    // TODO: save to userDefaults
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +31,7 @@ class ViewController:
 
         menuCollectionView.dataSource = self
         menuCollectionView.delegate = self
-        orderSum.isHidden = true
+//        checkoutButton.isHidden = true
     }
 
     private func initFirebase() {
@@ -74,8 +73,8 @@ class ViewController:
     }
 
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        lastOpenedIndex = indexPath.row
-        let product = productsList[indexPath.row]
+        let product = productsList[indexPath.item]
+        lastOpenedCellIndex = indexPath.item
         performSegue(withIdentifier: "ProductDetail", sender: product)
     }
 
@@ -84,20 +83,26 @@ class ViewController:
         return CGSize(width: width, height: 125.0)
     }
 
+    @IBAction func onClickCheckout(_ sender: UITapGestureRecognizer) {
+        let inCart = realm.objects(Product.self)
+        performSegue(withIdentifier: "CartVC", sender: inCart)
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "ProductDetail") {
             if let detailsVC = segue.destination as? ProductDetailVC {
                 if let product = sender as? Product {
                     detailsVC.delegate = self
+                    detailsVC.cellIndex = lastOpenedCellIndex
                     detailsVC.product = product
                 }
             }
         }
     }
 
-    func writeValueBack(amount: Int) {
-        if (lastOpenedIndex >= 0) {
-            let selectedProduct = productsList[lastOpenedIndex]
+    func writeValueBack(amount: Int, productIndex: Int) {
+        if (productIndex >= 0) {
+            let selectedProduct = productsList[productIndex]
 
             try! realm.write {
                 selectedProduct.amount = amount
@@ -113,21 +118,24 @@ class ViewController:
     }
 
     func refreshOrderSum() {
-        var sum = 0.0
+        /*var sumMoney = 0.0
+        var sumAmount = 0
         var isAnyProductAdded = false
         productsList.forEach {
             if ($0.amount > 0) {
-                sum += $0.moneyWithCents * Double($0.amount)
+                sumAmount += $0.amount
+                sumMoney += $0.moneyWithCents * Double($0.amount)
                 isAnyProductAdded = true
             }
-        }
+        }*/
+        checkoutButton.refreshData(realm.objects(Product.self))
 
-        if (isAnyProductAdded) {
-            orderSum.text = "\(sum)0"
+        /*if (isAnyProductAdded) {
+            checkoutButton.setPrice(price: <#T##Int##Swift.Int#>) = "\(sumMoney)0"
             orderSum.isHidden = false
         } else {
             orderSum.isHidden = true
-        }
+        }*/
     }
 
 }

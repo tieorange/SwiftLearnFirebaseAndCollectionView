@@ -1,5 +1,5 @@
 //
-//  CartVCViewController.swift
+//  CartVC.swift
 //  LearnFirebaseTry2
 //
 //  Created by Andrii Kovalchuk on 01/05/2017.
@@ -7,18 +7,22 @@
 //
 
 import UIKit
+import RealmSwift
 
-class CartVCViewController:
+class CartVC:
         UIViewController,
         UITableViewDelegate,
         UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var checkoutButton: CheckoutButtonView!
 
-    var productsList: [Product] = []
+    var productsList: Results<Product>!
+    var realm = try! Realm()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        productsList = realm.objects(Product.self)
 
         tableView.dataSource = self
         tableView.delegate = self
@@ -32,9 +36,23 @@ class CartVCViewController:
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CartCell", for: indexPath) as? CartCell {
             let product = productsList[indexPath.row]
             cell.configureCell(product: product)
+            cell.nameLabel.tag = indexPath.row
             return cell
         } else {
             return UITableViewCell()
+        }
+    }
+
+    @IBAction func onClickCheckout(_ sender: UITapGestureRecognizer) {
+        print("clicked")
+        performSegue(withIdentifier: "OrderTrackingVC", sender: nil)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "OrderTrackingVC") {
+            if let orderTrackingVC = segue.destination as? OrderTrackingVC {
+                // TODO
+            }
         }
     }
 

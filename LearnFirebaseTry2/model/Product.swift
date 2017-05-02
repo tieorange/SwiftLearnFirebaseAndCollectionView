@@ -34,7 +34,7 @@ class Product: Object {
 
     var moneyWithCentsString: String {
         get {
-            return "\(moneyWithCents)0"
+            return "\(moneyWithCents)0 zł"
         }
     }
 
@@ -43,7 +43,7 @@ class Product: Object {
             if (amount <= 0) {
                 return moneyWithCentsString
             }
-            return "\(Double(amount) * moneyWithCents)0"
+            return "\(Double(amount) * moneyWithCents)0 zł"
         }
     }
 
