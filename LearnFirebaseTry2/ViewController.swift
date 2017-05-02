@@ -33,6 +33,12 @@ class ViewController:
         menuCollectionView.delegate = self
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        refreshSumAndAmount()
+    }
+
+
     private func initFirebase() {
         let database = FIRDatabase.database()
         database.persistenceEnabled = true
@@ -50,7 +56,7 @@ class ViewController:
 
             product.amount = ProductsModel.getAmountByPrimaryKey(primaryKey: product.name, realm: self.realm)
             if (product.amount > 0) {
-                self.refreshOrderSum()
+                self.refreshSumAndAmount()
             }
 
             self.productsList.append(product)
@@ -101,11 +107,12 @@ class ViewController:
     }
 
     func writeValueBack() {
-        self.menuCollectionView.reloadData()
-        refreshOrderSum()
+        refreshSumAndAmount()
     }
 
-    func refreshOrderSum() {
+    func refreshSumAndAmount() {
+
+        self.menuCollectionView.reloadData()
         checkoutButton.refreshData(realm.objects(Product.self))
     }
 

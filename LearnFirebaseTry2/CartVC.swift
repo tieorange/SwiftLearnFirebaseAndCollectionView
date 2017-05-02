@@ -29,11 +29,6 @@ class CartVC:
         tableView.delegate = self
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-
-
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return productsList.count
     }
@@ -52,11 +47,14 @@ class CartVC:
 
     func productRemovedFromCart(index: Int) {
         let product: Product = self.productsList[index]
-        try! realm.write{
-            realm.delete(product)
-        }
+
         self.productsList.remove(at: index)
         tableView.reloadData()
+
+        try! realm.write {
+            realm.delete(product)
+        }
+
     }
 
     @IBAction func onClickCheckout(_ sender: UITapGestureRecognizer) {
