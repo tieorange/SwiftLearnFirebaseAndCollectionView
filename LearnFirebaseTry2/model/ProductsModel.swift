@@ -8,7 +8,11 @@ import RealmSwift
 
 class ProductsModel {
 
-    class func getAmountByPrimaryKey(primaryKey: String, realm: Realm) -> Int{
-        return realm.object(ofType: Product.self, forPrimaryKey: primaryKey)?.amount ?? 0
+    class func getAmountByPrimaryKey(product: Product, realm: Realm) -> Int {
+        if (product.isInvalidated) {
+            return -1
+        }
+
+        return realm.object(ofType: Product.self, forPrimaryKey: product.name)?.amount ?? 0
     }
 }

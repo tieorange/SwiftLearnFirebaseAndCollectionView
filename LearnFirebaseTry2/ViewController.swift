@@ -36,6 +36,7 @@ class ViewController:
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         refreshSumAndAmount()
+        refreshCellAmount()
     }
 
 
@@ -54,7 +55,7 @@ class ViewController:
                     price: dictionary["price"] as? Int ?? 0,
                     photoUrl: dictionary["photoUrl"] as? String ?? "")
 
-            product.amount = ProductsModel.getAmountByPrimaryKey(primaryKey: product.name, realm: self.realm)
+            product.amount = ProductsModel.getAmountByPrimaryKey(product: product, realm: self.realm)
             if (product.amount > 0) {
                 self.refreshSumAndAmount()
             }
@@ -116,5 +117,17 @@ class ViewController:
         checkoutButton.refreshData(realm.objects(Product.self))
     }
 
+    private func refreshCellAmount() {
+        try! realm.write {
+            productsList.forEach {
+                let amount = ProductsModel.getAmountByPrimaryKey(product: $0, realm: self.realm)
+                if (amount > 0) {
+                    $0.amount = amount
+                }
+            }
+        }
+
+        menuCollectionView.reloadData()
+    }
 }
 
