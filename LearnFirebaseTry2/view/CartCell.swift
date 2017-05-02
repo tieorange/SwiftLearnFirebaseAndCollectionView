@@ -16,6 +16,7 @@ class CartCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
 
     var product: Product!
+    var delegateRemove: DelegateRemovedFromCart?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +24,11 @@ class CartCell: UITableViewCell {
     }
 
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
-        amountLabel.text = "\(Int(stepper.value))"
+        if (stepper.value > 0) {
+            amountLabel.text = "\(Int(stepper.value))"
+        } else {
+            delegateRemove!.productRemovedFromCart(index: nameLabel.tag)
+        }
     }
 
     func configureCell(product: Product) {
@@ -33,7 +38,6 @@ class CartCell: UITableViewCell {
         stepper.value = Double(product.amount)
         priceLabel.text = "\(product.moneyWithCentsString)"
         nameLabel.text = product.name
-        nameLabel.sizeToFit()
     }
 
 }

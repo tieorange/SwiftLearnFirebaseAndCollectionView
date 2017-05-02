@@ -32,11 +32,11 @@ class ProductDetailVC: UIViewController {
     private func initProduct() {
         productName.text = product!.name
         productImage.kf.setImage(with: URL(string: product?.photoUrl ?? ""))
-        updateAmountValues()
+        updateFooterButtonValue()
     }
 
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
-        updateAmountValues()
+        setAmountValue()
     }
 
     @IBAction func addToCartClick(_ sender: Any) {
@@ -47,11 +47,12 @@ class ProductDetailVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
-    private func updateAmountValues() {
+    private func setAmountValue() {
         let amountInt = getStepperCount()
-        product!.amount = amountInt
-        addToCart.setTitle("Add \(amountInt) to cart \t \(product!.sumMoneyWithCentsString)", for: .normal)
-        amount.text = String(amountInt)
+        try! realm.write {
+            product!.amount = amountInt
+        }
+        updateFooterButtonValue()
     }
 
     private func addProductToCart() {
@@ -62,6 +63,12 @@ class ProductDetailVC: UIViewController {
 
         let allProducts = realm.objects(Product.self)
         print("Products in a cart \(allProducts)")
+    }
+
+    private func updateFooterButtonValue() {
+        let amountInt = getStepperCount()
+        addToCart.setTitle("Add \(amountInt) to cart \t \(product!.sumMoneyWithCentsString)", for: .normal)
+        amount.text = String(amountInt)
     }
 
     func getStepperCount() -> Int {
