@@ -31,14 +31,20 @@ class ViewController:
 
         menuCollectionView.dataSource = self
         menuCollectionView.delegate = self
-//        checkoutButton.isHidden = true
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        refreshSumAndAmount()
+    }
+
 
     private func initFirebase() {
         let database = FIRDatabase.database()
         database.persistenceEnabled = true
         ref = database.reference()
         ref?.keepSynced(true)
+
         ref?.child("products").observe(.childAdded, with: { (snapshot) in
             let dictionary = snapshot.value as? [String: AnyObject] ?? [:]
 
@@ -50,7 +56,7 @@ class ViewController:
 
             product.amount = ProductsModel.getAmountByPrimaryKey(primaryKey: product.name, realm: self.realm)
             if (product.amount > 0) {
-                self.refreshOrderSum()
+                self.refreshSumAndAmount()
             }
 
             self.productsList.append(product)
@@ -101,12 +107,18 @@ class ViewController:
     }
 
     func writeValueBack() {
-        self.menuCollectionView.reloadData()
-        refreshOrderSum()
+        refreshSumAndAmount()
     }
 
-    func refreshOrderSum() {
-        checkoutButton.refreshData(realm.objects(Product.self))
+    func refreshSumAndAmount() {
+        try! realm.write {
+            productsList.forEach {
+                $0.amount = ProductsModel.getAmountByPrimaryKey(primaryKey: $0.name, realm: realm)
+            }
+        }
+
+        self.menuCollectionView.reloadData()
+        checkoutButton.refreshData(ProductsModel.getAllProductsInCart(realm: realm))
     }
 
 }

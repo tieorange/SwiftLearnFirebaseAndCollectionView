@@ -6,7 +6,7 @@
 import Foundation
 import RealmSwift
 
-class Product: Object {
+class Product: Object, NSCopying {
     dynamic var name = ""
     dynamic var price = 0
     dynamic var photoUrl = ""
@@ -45,6 +45,12 @@ class Product: Object {
             }
             return "\(Double(amount) * moneyWithCents)0 zł"
         }
+    }
+
+    public func copy(with zone: NSZone?) -> Any {
+        let copy = Product(name: name, price: price, photoUrl: photoUrl)
+        copy.amount = amount
+        return copy
     }
 
 }

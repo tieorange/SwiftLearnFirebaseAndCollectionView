@@ -12,17 +12,18 @@ import RealmSwift
 class CartVC:
         UIViewController,
         UITableViewDelegate,
-        UITableViewDataSource {
+        UITableViewDataSource,
+        DelegateRemovedFromCart {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var checkoutButton: CheckoutButtonView!
 
-    var productsList: Results<Product>!
+    var productsList: Array<Product>!
     var realm = try! Realm()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        productsList = realm.objects(Product.self)
+        productsList = ProductsModel.getAllProductsInCart(realm: realm)
 
         tableView.dataSource = self
         tableView.delegate = self
@@ -37,24 +38,28 @@ class CartVC:
             let product = productsList[indexPath.row]
             cell.configureCell(product: product)
             cell.nameLabel.tag = indexPath.row
+            cell.delegateRemove = self
             return cell
         } else {
             return UITableViewCell()
         }
     }
 
+    func productRemovedFromCart(index: Int) {
+        let product: Product = self.productsList[index]
+
+        self.productsList.remove(at: index)
+        tableView.reloadData()
+
+        try! realm.write {
+            product.amount = 0
+        }
+
+    }
+
     @IBAction func onClickCheckout(_ sender: UITapGestureRecognizer) {
         print("clicked")
         performSegue(withIdentifier: "OrderTrackingVC", sender: nil)
     }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "OrderTrackingVC") {
-            if let orderTrackingVC = segue.destination as? OrderTrackingVC {
-                // TODO
-            }
-        }
-    }
-
 
 }
