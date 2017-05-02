@@ -22,6 +22,6 @@ extension Int {
 
     // FIXME: show 0 with mathematics, not just string.
     func toPriceString() -> String {
-        return "\(self.toPriceDouble())0"
+        return "\(self.toPriceDouble())0 zł"
     }
 }

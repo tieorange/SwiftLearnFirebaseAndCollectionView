@@ -9,8 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckoutButton" customModule="LearnFirebaseTry2" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckoutButtonView" customModule="LearnFirebaseTry2" customModuleProvider="target">
             <connections>
+                <outlet property="amount" destination="yJQ-N7-EUQ" id="ewg-4J-IiY"/>
                 <outlet property="price" destination="BoC-0t-pL3" id="Mnb-09-Xfg"/>
                 <outlet property="view" destination="iN0-l3-epB" id="GgY-gx-WaO"/>
             </connections>
