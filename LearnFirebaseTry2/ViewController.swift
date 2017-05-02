@@ -44,6 +44,7 @@ class ViewController:
         database.persistenceEnabled = true
         ref = database.reference()
         ref?.keepSynced(true)
+        ProductsModel.removeProductsWithZeroAmount(realm: realm)
 
         ref?.child("products").observe(.childAdded, with: { (snapshot) in
             let dictionary = snapshot.value as? [String: AnyObject] ?? [:]
