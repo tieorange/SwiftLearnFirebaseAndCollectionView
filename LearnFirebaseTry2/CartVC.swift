@@ -24,6 +24,7 @@ class CartVC:
     override func viewDidLoad() {
         super.viewDidLoad()
         productsList = ProductsModel.getAllProductsInCart(realm: realm)
+        checkoutButton.refreshData(productsList)
 
         tableView.dataSource = self
         tableView.delegate = self

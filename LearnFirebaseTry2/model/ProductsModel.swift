@@ -15,4 +15,10 @@ class ProductsModel {
     class func getAllProductsInCart(realm: Realm) -> [Product] {
         return Array(realm.objects(Product.self).filter("amount > 0"))
     }
+
+    class func removeProductsWithZeroAmount(realm: Realm) {
+        try! realm.write {
+            realm.delete(realm.objects(Product.self).filter("amount <= 0"))
+        }
+    }
 }
