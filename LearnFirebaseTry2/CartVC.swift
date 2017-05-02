@@ -52,7 +52,8 @@ class CartVC:
         tableView.reloadData()
 
         try! realm.write {
-            realm.delete(product)
+//            realm.delete(product)
+            product.amount = 0
         }
 
     }
