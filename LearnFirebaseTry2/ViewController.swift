@@ -31,7 +31,6 @@ class ViewController:
 
         menuCollectionView.dataSource = self
         menuCollectionView.delegate = self
-//        checkoutButton.isHidden = true
     }
 
     private func initFirebase() {
@@ -39,6 +38,7 @@ class ViewController:
         database.persistenceEnabled = true
         ref = database.reference()
         ref?.keepSynced(true)
+
         ref?.child("products").observe(.childAdded, with: { (snapshot) in
             let dictionary = snapshot.value as? [String: AnyObject] ?? [:]
 
