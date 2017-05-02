@@ -23,7 +23,7 @@ class CartVC:
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        productsList = Array(realm.objects(Product.self))
+        productsList = ProductsModel.getAllProductsInCart(realm: realm)
 
         tableView.dataSource = self
         tableView.delegate = self
@@ -52,7 +52,6 @@ class CartVC:
         tableView.reloadData()
 
         try! realm.write {
-//            realm.delete(product)
             product.amount = 0
         }
 

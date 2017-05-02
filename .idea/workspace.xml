@@ -4,6 +4,9 @@
     <list default="true" id="2569e4a4-dbe1-4d68-9b88-877d0b3e6715" name="Default" comment="Before sleeping">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LearnFirebaseTry2/CartVC.swift" afterPath="$PROJECT_DIR$/LearnFirebaseTry2/CartVC.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LearnFirebaseTry2/ViewController.swift" afterPath="$PROJECT_DIR$/LearnFirebaseTry2/ViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LearnFirebaseTry2/model/ProductsModel.swift" afterPath="$PROJECT_DIR$/LearnFirebaseTry2/model/ProductsModel.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LearnFirebaseTry2/view/CheckoutButtonView.swift" afterPath="$PROJECT_DIR$/LearnFirebaseTry2/view/CheckoutButtonView.swift" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,11 +18,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulatoriPhone_5_10.3_i386_1" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ViewController.swift" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ViewController.swift" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/LearnFirebaseTry2/ViewController.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="56" column="24" lean-forward="true" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="24" />
+            <state relative-caret-position="248">
+              <caret line="115" column="39" lean-forward="false" selection-start-line="115" selection-start-column="39" selection-end-line="115" selection-end-column="39" />
               <folding>
                 <element signature="e#164#176#0" expanded="true" />
               </folding>
@@ -30,11 +33,9 @@
       <file leaf-file-name="ProductsModel.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LearnFirebaseTry2/model/ProductsModel.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-              <folding>
-                <marker date="1493738681000" expanded="true" signature="171:350" ph="{...}" />
-              </folding>
+            <state relative-caret-position="247">
+              <caret line="14" column="35" lean-forward="false" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="35" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -61,12 +62,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CartVC.swift" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CartVC.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LearnFirebaseTry2/CartVC.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="54" column="35" lean-forward="true" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
-              <folding />
+            <state relative-caret-position="392">
+              <caret line="31" column="35" lean-forward="false" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+              <folding>
+                <element signature="e#156#168#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,8 +94,8 @@
       <file leaf-file-name="CheckoutButtonView.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LearnFirebaseTry2/view/CheckoutButtonView.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="204">
+              <caret line="36" column="30" lean-forward="false" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
               <folding>
                 <element signature="e#168#180#0" expanded="true" />
               </folding>
@@ -154,20 +157,20 @@
         <option value="$PROJECT_DIR$/ProductDetailVC.swift" />
         <option value="$PROJECT_DIR$/LearnFirebaseTry2/view/ProductDetailsVC.swift" />
         <option value="$PROJECT_DIR$/LearnFirebaseTry2/ProductsModel.swift" />
-        <option value="$PROJECT_DIR$/LearnFirebaseTry2/model/ProductsModel.swift" />
         <option value="$PROJECT_DIR$/Podfile" />
         <option value="$PROJECT_DIR$/LearnFirebaseTry2/CartVCViewController.swift" />
         <option value="$PROJECT_DIR$/LearnFirebaseTry2/view/MenuCell.swift" />
         <option value="$PROJECT_DIR$/LearnFirebaseTry2/view/CheckoutButton.swift" />
         <option value="$PROJECT_DIR$/LearnFirebaseTry2/extensions/extensions.swift" />
-        <option value="$PROJECT_DIR$/LearnFirebaseTry2/view/CheckoutButtonView.swift" />
         <option value="$PROJECT_DIR$/LearnFirebaseTry2/extensions/ProtocolDataBack.swift" />
         <option value="$PROJECT_DIR$/LearnFirebaseTry2/extensions/DelegateRemovedFromCart.swift" />
         <option value="$PROJECT_DIR$/LearnFirebaseTry2/view/CartCell.swift" />
         <option value="$PROJECT_DIR$/LearnFirebaseTry2/view/ProductDetailVC.swift" />
         <option value="$PROJECT_DIR$/LearnFirebaseTry2/model/Product.swift" />
-        <option value="$PROJECT_DIR$/LearnFirebaseTry2/ViewController.swift" />
+        <option value="$PROJECT_DIR$/LearnFirebaseTry2/model/ProductsModel.swift" />
         <option value="$PROJECT_DIR$/LearnFirebaseTry2/CartVC.swift" />
+        <option value="$PROJECT_DIR$/LearnFirebaseTry2/view/CheckoutButtonView.swift" />
+        <option value="$PROJECT_DIR$/LearnFirebaseTry2/ViewController.swift" />
       </list>
     </option>
   </component>
@@ -534,7 +537,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45722000" />
+    <option name="totallyTimeSpent" value="46369000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="0" />
@@ -1013,6 +1016,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-488">
           <caret line="77" column="26" lean-forward="false" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1027,16 +1031,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LearnFirebaseTry2/view/CheckoutButtonView.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#168#180#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1091,29 +1085,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LearnFirebaseTry2/model/ProductsModel.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+        <state relative-caret-position="247">
+          <caret line="14" column="35" lean-forward="false" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LearnFirebaseTry2/CartVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="31" column="35" lean-forward="false" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
           <folding>
-            <marker date="1493738681000" expanded="true" signature="171:350" ph="{...}" />
+            <element signature="e#156#168#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LearnFirebaseTry2/view/CheckoutButtonView.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="36" column="30" lean-forward="false" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+          <folding>
+            <element signature="e#168#180#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LearnFirebaseTry2/ViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="56" column="24" lean-forward="true" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="24" />
+        <state relative-caret-position="248">
+          <caret line="115" column="39" lean-forward="false" selection-start-line="115" selection-start-column="39" selection-end-line="115" selection-end-column="39" />
           <folding>
             <element signature="e#164#176#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LearnFirebaseTry2/CartVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="54" column="35" lean-forward="true" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>

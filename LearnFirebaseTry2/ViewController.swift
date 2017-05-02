@@ -111,9 +111,14 @@ class ViewController:
     }
 
     func refreshSumAndAmount() {
+        try! realm.write {
+            productsList.forEach {
+                $0.amount = ProductsModel.getAmountByPrimaryKey(primaryKey: $0.name, realm: realm)
+            }
+        }
 
         self.menuCollectionView.reloadData()
-        checkoutButton.refreshData(realm.objects(Product.self))
+        checkoutButton.refreshData(ProductsModel.getAllProductsInCart(realm: realm))
     }
 
 }

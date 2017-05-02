@@ -34,7 +34,7 @@ class CheckoutButtonView: UIView {
         self.amount.text = "(\(amount))"
     }
 
-    func refreshData(_ productsInCart: RealmSwift.Results<Product>) {
+    func refreshData(_ productsInCart: [Product]) {
         var sumAmount = 0
         var sumPrice = 0
         productsInCart.forEach {
