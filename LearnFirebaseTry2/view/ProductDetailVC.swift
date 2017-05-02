@@ -49,9 +49,8 @@ class ProductDetailVC: UIViewController {
 
     private func setAmountValue() {
         let amountInt = getStepperCount()
-        let productCopy = product!.copy(with: .none) as! Product
         try! realm.write {
-            productCopy.amount = amountInt
+            product!.amount = amountInt
         }
         updateFooterButtonValue()
     }
