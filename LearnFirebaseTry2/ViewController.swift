@@ -100,42 +100,13 @@ class ViewController:
         }
     }
 
-    func writeValueBack(amount: Int, productIndex: Int) {
-        if (productIndex >= 0) {
-            let selectedProduct = productsList[productIndex]
-
-            try! realm.write {
-                selectedProduct.amount = amount
-                realm.add(selectedProduct, update: true)
-            }
-
-            let allProducts = realm.objects(Product.self)
-            print("Products in a cart \(allProducts)")
-
-            self.menuCollectionView.reloadData()
-            refreshOrderSum()
-        }
+    func writeValueBack() {
+        self.menuCollectionView.reloadData()
+        refreshOrderSum()
     }
 
     func refreshOrderSum() {
-        /*var sumMoney = 0.0
-        var sumAmount = 0
-        var isAnyProductAdded = false
-        productsList.forEach {
-            if ($0.amount > 0) {
-                sumAmount += $0.amount
-                sumMoney += $0.moneyWithCents * Double($0.amount)
-                isAnyProductAdded = true
-            }
-        }*/
         checkoutButton.refreshData(realm.objects(Product.self))
-
-        /*if (isAnyProductAdded) {
-            checkoutButton.setPrice(price: <#T##Int##Swift.Int#>) = "\(sumMoney)0"
-            orderSum.isHidden = false
-        } else {
-            orderSum.isHidden = true
-        }*/
     }
 
 }

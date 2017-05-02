@@ -9,6 +9,7 @@
 import UIKit
 import Kingfisher
 import ChameleonFramework
+import RealmSwift
 
 class ProductDetailVC: UIViewController {
 
@@ -21,6 +22,7 @@ class ProductDetailVC: UIViewController {
     var product: Product?
     var cellIndex = -1
     var delegate: writeValueBackDelegate?
+    private var realm = try! Realm()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +40,9 @@ class ProductDetailVC: UIViewController {
     }
 
     @IBAction func addToCartClick(_ sender: Any) {
-        delegate?.writeValueBack(amount: getStepperCount(), productIndex: cellIndex)
+        addProductToCart()
+
+        delegate?.writeValueBack()
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
     }
@@ -48,6 +52,16 @@ class ProductDetailVC: UIViewController {
         product!.amount = amountInt
         addToCart.setTitle("Add \(amountInt) to cart \t \(product!.sumMoneyWithCentsString)", for: .normal)
         amount.text = String(amountInt)
+    }
+
+    private func addProductToCart() {
+        try! realm.write {
+            product?.amount = getStepperCount()
+            realm.add(product!, update: true)
+        }
+
+        let allProducts = realm.objects(Product.self)
+        print("Products in a cart \(allProducts)")
     }
 
     func getStepperCount() -> Int {
