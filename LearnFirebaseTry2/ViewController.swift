@@ -21,7 +21,7 @@ class ViewController:
     @IBOutlet weak var menuCollectionView: UICollectionView!
     private var lastOpenedCellIndex = -1
     private var productsList = [Product]()
-    private var ref: FIRDatabaseReference?
+    private var ref: FIRDatabaseReference!
     private let realm = try! Realm()
 
     override func viewDidLoad() {
