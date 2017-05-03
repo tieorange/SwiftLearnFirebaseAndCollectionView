@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import EVReflection
 
 extension Double {
     /// Rounds the double to decimal places value
@@ -25,3 +26,26 @@ extension Int {
         return "\(self.toPriceDouble())0 zł"
     }
 }
+
+extension NSObject {
+    var theClassName: String {
+        return NSStringFromClass(type(of: self))
+    }
+}
+
+/*
+extension List : EVReflectable {
+    public func constructWith(value: Any?) {
+        if let array = value as? [NSDictionary] {
+            self.removeAll()
+            for dict in array {
+                if let element: T = EVReflection.fromDictionary(dict, anyobjectTypeString: _rlmArray.objectClassName) as? T {
+                    self.append(element)
+                }
+            }
+        }
+    }
+    public func toCodableValue() -> Any {
+        return self.enumerated().map { ($0.element as? EVReflectable)?.toDictionary() ?? NSDictionary() }
+    }
+}*/

@@ -5,10 +5,13 @@
 
 import Foundation
 import RealmSwift
+import EVReflection
 
-class Product: Object, NSCopying {
+class Product: Object, NSCopying, EVReflectable {
     dynamic var name = ""
     dynamic var price = 0
+    dynamic var doublePrice = 0.0
+    dynamic var cookingTime = 0
     dynamic var photoUrl = ""
     dynamic var amount = 0
 

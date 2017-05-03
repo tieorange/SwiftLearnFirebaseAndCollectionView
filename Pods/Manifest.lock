@@ -2,13 +2,16 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
-  - Firebase/Core (3.16.0):
-    - FirebaseAnalytics (= 3.8.0)
+  - EVReflection (4.9.1):
+    - EVReflection/Core (= 4.9.1)
+  - EVReflection/Core (4.9.1)
+  - Firebase/Core (3.17.0):
+    - FirebaseAnalytics (= 3.9.0)
     - FirebaseCore (= 3.6.0)
-  - Firebase/Database (3.16.0):
+  - Firebase/Database (3.17.0):
     - Firebase/Core
     - FirebaseDatabase (= 3.1.2)
-  - FirebaseAnalytics (3.8.0):
+  - FirebaseAnalytics (3.9.0):
     - FirebaseCore (~> 3.6)
     - FirebaseInstanceID (~> 1.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
@@ -30,15 +33,21 @@ PODS:
   - Realm/Headers (2.6.2)
   - RealmSwift (2.6.2):
     - Realm (= 2.6.2)
+  - RxCocoa (3.4.1):
+    - RxSwift (~> 3.4)
+  - RxSwift (3.4.1)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
-  - Firebase/Core
-  - Firebase/Database
+  - EVReflection
+  - Firebase/Core (~> 3.17.0)
+  - Firebase/Database (~> 3.17.0)
   - FirebaseUI/Database (~> 3.0)
   - Floaty (~> 3.0.0)
   - Kingfisher (~> 3.0)
   - RealmSwift
+  - RxCocoa (~> 3.4.0)
+  - RxSwift (~> 3.4.0)
 
 EXTERNAL SOURCES:
   ChameleonFramework:
@@ -51,8 +60,9 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
-  Firebase: 21bf4a89d3f01bfbe11adc3a5d934a4a3d3a5fd6
-  FirebaseAnalytics: 920e46455f27b0a52a80907a6d9b73ee4bd1c635
+  EVReflection: f656ab71b7ed34c0922c6c4836bb77e9b33ca66c
+  Firebase: 4b66b5b59c43edac745b87f0c87e42cdd0279c13
+  FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
   FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
   FirebaseDatabase: 05c96d7b43a7368dc91c07791adb49683e1738d1
   FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
@@ -62,7 +72,9 @@ SPEC CHECKSUMS:
   Kingfisher: 2c94e72c6830622c71d06adf4ea024c37d316830
   Realm: 29222766425b9f831228f81b63f0e38a97a4d700
   RealmSwift: d161a80f96cb91ae88391a7d5a9cf08024a7bc8e
+  RxCocoa: a8a5f1d061d0043e28f56976829f31ce63e8eb09
+  RxSwift: 656f8fbeca5bc372121a72d9ebdd3cd3bc0ffade
 
-PODFILE CHECKSUM: 2098626c523d23f6a4123d48d7a6bfd4cc3c1b79
+PODFILE CHECKSUM: f62833f902d018d0cc4200001c619bd31bcf57f7
 
 COCOAPODS: 1.2.1

@@ -7,7 +7,15 @@
 //
 
 import Foundation
+import EVReflection
 
-class Cart {
-//    <#code#>
+class Cart: EVObject {
+    public var productsFirebase = [Product]()
+
+    convenience init(products: [Product]) {
+        self.init()
+        products.forEach {
+            self.productsFirebase.append($0)
+        }
+    }
 }

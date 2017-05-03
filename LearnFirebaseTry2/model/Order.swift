@@ -7,17 +7,20 @@
 //
 
 import Foundation
+import EVReflection
+
 import RealmSwift
 
-class Order: Object {
+class Order: EVObject{
 
     dynamic var clientName: String = ""
-    var cart: Cart?
+    var productsCart: Cart = Cart()
 
-
-    convenience public init(_ dictionary: [String: AnyObject]) {
+    /*convenience public init(_ dictionary: [String: AnyObject]) {
         self.init()
         self.clientName = dictionary["clientName"] as? String ?? ""
-//        self.
-    }
+
+//        (dictionary["productsCart"] as! [String: AnyObject])["productsFirebase"]
+        self.productsCart = dictionary["productsCart"] as? Cart ?? Cart()
+    }*/
 }

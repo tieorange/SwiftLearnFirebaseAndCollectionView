@@ -6,13 +6,16 @@ target 'LearnFirebaseTry2' do
   use_frameworks!
 
   # Pods for LearnF
-  pod 'Firebase/Core'
-  pod 'Firebase/Database'
+  pod 'Firebase/Core', '~> 3.17.0'
+  pod 'Firebase/Database', '~> 3.17.0'
   pod 'FirebaseUI/Database', '~> 3.0'
   pod 'Kingfisher', '~> 3.0'
   pod 'RealmSwift'
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   pod "Floaty", "~> 3.0.0"
+  pod 'RxSwift',    '~> 3.4.0'
+  pod 'RxCocoa',    '~> 3.4.0'
+  pod "EVReflection"
 end
 
 post_install do |installer|
