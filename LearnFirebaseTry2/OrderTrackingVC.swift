@@ -12,8 +12,15 @@ import EVReflection
 
 class OrderTrackingVC: UIViewController {
 
+    private var CLIENT_NAME = "iPhone"
     private var ref: FIRDatabaseReference!
     private var ordersList = [Order]()
+
+    @IBOutlet weak var sumTimeLabel: UILabel!
+    @IBOutlet weak var otherTimeLabel: UILabel!
+    @IBOutlet weak var yourOrderTimeLabel: UILabel!
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,18 +31,41 @@ class OrderTrackingVC: UIViewController {
 
     private func initFirebase() {
         let database = FIRDatabase.database()
-        ref = database.reference()
+        ref = database.reference().child("orders")
 
-        ref?.child("orders").observe(.childAdded, with: { (snapshot) in
-            let dictionary = snapshot.value as! [String: AnyObject]
+//        ref?.child("orders").observe(.childAdded, with: { (snapshot) in
+//            let dictionary = snapshot.value as! [String: AnyObject]
+//
+//            let order = EVReflection.fromDictionary(dictionary as! NSDictionary,
+//                    anyobjectTypeString: String(describing: Order.self)) as! Order
+//
+//            self.ordersList.append(order)
+//
+//            print(order)
+//        })
 
-            let order = EVReflection.fromDictionary(dictionary as! NSDictionary,
+        ref.observe(.childAdded, with: { (snapshot) in
+            let dictionary = snapshot.value as! NSDictionary
+
+            let order = EVReflection
+                    .fromDictionary(dictionary,
                     anyobjectTypeString: String(describing: Order.self)) as! Order
 
-            self.ordersList.append(order)
+            addNewOrder(order: order)
 
             print(order)
         })
+
+    }
+
+    func addNewOrder(order: Order) {
+        if (order.clientName == CLIENT_NAME) {
+
+        } else {
+
+        }
+
+        self.ordersList.append(order)
     }
 
     private func makeOrder() {
@@ -46,8 +76,4 @@ class OrderTrackingVC: UIViewController {
         ref?.child("orders").childByAutoId().setValue(order.toDictionary())
         Foo(dictionary: order.toDictionary())
     }
-}
-
-class Foo: EVObject {
-    public var name = ""
 }

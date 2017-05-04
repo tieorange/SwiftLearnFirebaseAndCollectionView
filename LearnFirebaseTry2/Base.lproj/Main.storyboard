@@ -350,6 +350,13 @@
                             <constraint firstItem="4t9-do-9Kb" firstAttribute="top" secondItem="dlV-Ma-hZ5" secondAttribute="bottom" constant="20" id="fl6-9f-odL"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="orderOrderTimeLabel" destination="D7v-WF-lV8" id="gij-xe-eN3"/>
+                        <outlet property="otherTimeLabel" destination="D7v-WF-lV8" id="xX1-FL-btb"/>
+                        <outlet property="sumTimeLabel" destination="qIl-cK-nhV" id="cqU-lN-529"/>
+                        <outlet property="sumTimeToWait" destination="qIl-cK-nhV" id="FcM-Gc-2gl"/>
+                        <outlet property="yourOrderTimeLabel" destination="gQy-d9-rty" id="gUy-1A-0ks"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="27B-Tz-lD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
