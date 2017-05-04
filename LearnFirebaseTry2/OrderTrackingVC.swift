@@ -20,7 +20,6 @@ class OrderTrackingVC: UIViewController {
     @IBOutlet weak var otherTimeLabel: UILabel!
     @IBOutlet weak var yourOrderTimeLabel: UILabel!
 
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,13 +58,17 @@ class OrderTrackingVC: UIViewController {
     }
 
     func addNewOrder(order: Order) {
-        if (order.clientName == CLIENT_NAME) {
+        if (order.status.hasPrefix(Order.START_WITH_ORDERED_ORDERS)) {
+            self.ordersList.append(order)
 
-        } else {
+            if (order.clientName == CLIENT_NAME) {
+                yourOrderTimeLabel.text = "\(order.sumOfTimeToWait)"
+            } else {
+
+            }
 
         }
 
-        self.ordersList.append(order)
     }
 
     private func makeOrder() {
