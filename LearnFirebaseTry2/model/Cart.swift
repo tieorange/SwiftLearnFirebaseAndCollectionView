@@ -9,10 +9,10 @@
 import Foundation
 import EVReflection
 
-class Cart: EVObject {
+class Cart: EVObject, JSONAble {
     public var productsFirebase = [Product]()
 
-    convenience init(products: [Product]) {
+    convenience init(_ products: [Product]) {
         self.init()
         products.forEach {
             self.productsFirebase.append($0)

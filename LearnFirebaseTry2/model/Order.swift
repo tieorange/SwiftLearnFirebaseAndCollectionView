@@ -11,7 +11,7 @@ import EVReflection
 
 import RealmSwift
 
-class Order: EVObject {
+class Order: EVObject, JSONAble {
 
     dynamic var clientName: String = ""
     dynamic var sumOfTimeToWait: Int = 0
@@ -19,14 +19,14 @@ class Order: EVObject {
     var productsCart: Cart = Cart()
 
 
-    class let STATE_ORDERED = "39"
-    class let STATE_ACCEPTED = "38"
-    class let STATE_READY = "29"
-    class let STATE_REJECTED = "20"
+    static let STATE_ORDERED = "39"
+    static let STATE_ACCEPTED = "38"
+    static let STATE_READY = "29"
+    static let STATE_REJECTED = "20"
 
-    class let START_WITH_ORDERED_ORDERS = STATE_ORDERED.substring(0, 1)
-    class let ORDERED_ORDERS_ENDS_WITH = START_WITH_ORDERED_ORDERS + "\\uf8ff"
-    class let FINISHED_ORDERS_START_WITH = STATE_READY.substring(0, 1)
-    class let FINISHED_ORDERS_END_WITH = FINISHED_ORDERS_START_WITH + "\\uf8ff"
+    static let START_WITH_ORDERED_ORDERS = STATE_ORDERED.substring(to: 1)
+    static let ORDERED_ORDERS_ENDS_WITH = START_WITH_ORDERED_ORDERS + "\\uf8ff"
+    static let FINISHED_ORDERS_START_WITH = STATE_READY.substring(to: 1)
+    static let FINISHED_ORDERS_END_WITH = FINISHED_ORDERS_START_WITH + "\\uf8ff"
 
 }

@@ -59,8 +59,7 @@ class CartVC:
     }
 
     @IBAction func onClickCheckout(_ sender: UITapGestureRecognizer) {
-        print("clicked")
-        performSegue(withIdentifier: "OrderTrackingVC", sender: nil)
+        OrderTools.makeOrder(productsList)
+        performSegue(withIdentifier: ConstantValues.SEGUE_ORDER_TRACKING, sender: nil)
     }
-
 }

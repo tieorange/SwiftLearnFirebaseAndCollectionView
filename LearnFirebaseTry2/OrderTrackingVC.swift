@@ -12,7 +12,6 @@ import EVReflection
 
 class OrderTrackingVC: UIViewController {
 
-    private var CLIENT_NAME = "iPhone"
     private var ref: FIRDatabaseReference!
     private var ordersList = [Order]()
 
@@ -29,10 +28,9 @@ class OrderTrackingVC: UIViewController {
     }
 
     private func initFirebase() {
-        let database = FIRDatabase.database()
-        ref = database.reference().child("orders")
+        ref = FIRDatabase.database().reference().child(ConstantValues.FIR_ORDERS)
 
-//        ref?.child("orders").observe(.childAdded, with: { (snapshot) in
+//        ref?.child(ConstantValues.FIR_ORDERS).observe(.childAdded, with: { (snapshot) in
 //            let dictionary = snapshot.value as! [String: AnyObject]
 //
 //            let order = EVReflection.fromDictionary(dictionary as! NSDictionary,
@@ -50,7 +48,7 @@ class OrderTrackingVC: UIViewController {
                     .fromDictionary(dictionary,
                     anyobjectTypeString: String(describing: Order.self)) as! Order
 
-            addNewOrder(order: order)
+            self.addNewOrder(order: order)
 
             print(order)
         })
@@ -61,7 +59,7 @@ class OrderTrackingVC: UIViewController {
         if (order.status.hasPrefix(Order.START_WITH_ORDERED_ORDERS)) {
             self.ordersList.append(order)
 
-            if (order.clientName == CLIENT_NAME) {
+            if (order.clientName == UserTools.CLIENT_NAME) {
                 yourOrderTimeLabel.text = "\(order.sumOfTimeToWait)"
             } else {
 
@@ -76,7 +74,6 @@ class OrderTrackingVC: UIViewController {
         order.clientName = "iPhone"
         order.productsCart = Cart()
         order.productsCart.productsFirebase.append(Product(name: "banan", price: 400, photoUrl: "https://www.organicfacts.net/wp-content/uploads/2013/05/Banana3.jpg"))
-        ref?.child("orders").childByAutoId().setValue(order.toDictionary())
-        Foo(dictionary: order.toDictionary())
+        ref?.child(ConstantValues.FIR_ORDERS).childByAutoId().setValue(order.toDictionary())
     }
 }
